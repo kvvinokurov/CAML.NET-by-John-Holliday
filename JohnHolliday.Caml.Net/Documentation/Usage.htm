@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>CAML.NET Usage</title>
+</head>
+<body>
+<b>Installing CAML.NET</b><br /> <br /><ol>
+<li>Add a reference to the JohnHolliday.Caml.Net assembly.</li><li>Add the appropriate using or imports statement to your code file.</li><li>Build your query as in the following examples.</li><li>Use the resulting string as standard XML.</li>
+</ol> <br /><b>Using CAML.NET</b><br /> <br />The following CAML query retrieves a list of items grouped by title, whose content type is &quot;My Content Type&quot; and whose description field is not empty.  It also specifies that the result set should be ordered by the _Author, AuthoringDate and AssignedTo fields and that the AssignedTo field shall be in ascending order.<br /> <br /><pre>
+&lt;Query&gt;
+   &lt;Where&gt;
+      &lt;Or&gt;
+         &lt;Eq&gt;
+            &lt;FieldRef Name=&quot;ContentType&quot; /&gt;
+            &lt;Value Type=&quot;Text&quot;&gt;My Content Type&lt;/Value&gt;
+         &lt;/Eq&gt;
+         &lt;IsNotNull&gt;
+            &lt;FieldRef Name=&quot;Description&quot; /&gt;
+         &lt;/IsNotNull&gt;
+      &lt;/Or&gt;
+   &lt;/Where&gt;
+   &lt;GroupBy Collapse=&quot;TRUE&quot;&gt;
+      &lt;FieldRef Ascending=&quot;FALSE&quot; Name=&quot;Title&quot; /&gt;
+   &lt;/GroupBy&gt;
+   &lt;OrderBy&gt;
+      &lt;FieldRef Name=&quot;_Author&quot; /&gt;
+      &lt;FieldRef Name=&quot;AuthoringDate&quot; /&gt;
+      &lt;FieldRef Ascending=&quot;TRUE&quot; Name=&quot;AssignedTo&quot; /&gt;
+   &lt;/OrderBy&gt;
+&lt;/Query&gt;
+</pre> <br />To use this in C#, you would have to convert it to a literal string, taking care to handle the embedded quotation marks, as in:<br /> <br /><pre>
+string simpleQuery = @&quot;&lt;Query&gt;&lt;Where&gt;&lt;Or&gt;&lt;Eq&gt;&lt;FieldRef Name=&quot;&quot;ContentType&quot;&quot; /&gt;&lt;Value Type=&quot;&quot;Text&quot;&quot;&gt;My Content Type&lt;/Value&gt;&lt;/Eq&gt;
+&lt;IsNotNull&gt;&lt;FieldRef Name=&quot;&quot;Description&quot;&quot; /&gt;&lt;/IsNotNull&gt;&lt;/Or&gt;&lt;/Where&gt;
+&lt;GroupBy Collapse=&quot;&quot;TRUE&quot;&quot;&gt;&lt;FieldRef Ascending=&quot;&quot;FALSE&quot;&quot; Name=&quot;&quot;Title&quot;&quot; /&gt;&lt;/GroupBy&gt;
+&lt;OrderBy&gt;&lt;FieldRef Name=&quot;&quot;_Author&quot;&quot; /&gt;&lt;FieldRef Name=&quot;&quot;AuthoringDate&quot;&quot; /&gt;
+&lt;FieldRef Ascending=&quot;&quot;TRUE&quot;&quot; Name=&quot;&quot;AssignedTo&quot;&quot; /&gt;&lt;/OrderBy&gt;&lt;/Query&gt;&quot;;
+</pre> <br />To reuse this query for another content type, or to add more fields to the result set, or to change the ordering, etc., you would have to either generate a new query, or painstakingly decode the string by hand, possibly introducing typos or other errors along the way.<br /> <br /><b>Here is the same query written in CAML.NET:</b><br /> <br /><pre>
+string typeName = &quot;My Content Type&quot;;
+string simpleQuery =
+    CAML.Query(
+        CAML.Where(
+            CAML.Or(
+                CAML.Eq(
+                    CAML.FieldRef(&quot;ContentType&quot;), 
+                    CAML.Value(typeName)),
+                CAML.IsNotNull(
+                    CAML.FieldRef(&quot;Description&quot;)))),
+        CAML.GroupBy(
+            true,
+            CAML.FieldRef(&quot;Title&quot;,CAML.SortType.Descending)),
+        CAML.OrderBy(
+            CAML.FieldRef(&quot;_Author&quot;),
+            CAML.FieldRef(&quot;AuthoringDate&quot;),
+            CAML.FieldRef(&quot;AssignedTo&quot;,CAML.SortType.Ascending))
+    );
+</pre> <br />Once you've assigned the string, you can use it as you would any other XML query string.  For instance, the following code applies the query to a site collection.<br /> <br /><pre>
+   SPSiteDataQuery q = new SPSiteDataQuery();
+   q.Query = simpleQuery;
+   q.ViewFields = CAML.FieldRef(&quot;Title&quot;) + CAML.FieldRef(&quot;ID&quot;);
+   q.RowLimit = 10;
+   DataTable t = SPContext.Current.Web.GetSiteData(q);
+</pre> <br /><b>Another Example</b><br /> <br />Here is another example, taken from the ECM team blog.  It lists all .bmp files in the site collection that have a height or width over 200 pixels, in descending order by file size.<br /> <br /><pre>
+&lt;Query&gt;
+   &lt;Where&gt;
+      &lt;And&gt;
+         &lt;Eq&gt;
+            &lt;FieldRef Name=&quot;DocIcon&quot; /&gt;
+            &lt;Value Type=&quot;Computed&quot;&gt;bmp&lt;/Value&gt;
+         &lt;/Eq&gt;
+         &lt;Or&gt;
+            &lt;Gt&gt;
+               &lt;FieldRef Name=&quot;ImageWidth&quot; /&gt;
+               &lt;Value Type=&quot;Integer&quot;&gt;200&lt;/Value&gt;
+            &lt;/Gt&gt;
+            &lt;Gt&gt;
+               &lt;FieldRef Name=&quot;ImageHeight&quot; /&gt;
+               &lt;Value Type=&quot;Integer&quot;&gt;200&lt;/Value&gt;
+            &lt;/Gt&gt;
+         &lt;/Or&gt;
+      &lt;/And&gt;
+   &lt;/Where&gt;
+   &lt;OrderBy&gt;
+      &lt;FieldRef Ascending=&quot;FALSE&quot; Name=&quot;FileSizeDisplay&quot; /&gt;
+   &lt;/OrderBy&gt;
+&lt;/Query&gt;
+</pre> <br />Again, &quot;stringizing&quot; for C# you have:<br /> <br /><pre>
+string queryBitmapImages = @&quot;&lt;Query&gt;&lt;Where&gt;&lt;And&gt;&lt;Eq&gt;&lt;FieldRef Name=&quot;&quot;DocIcon&quot;&quot; /&gt;&lt;Value Type=&quot;&quot;Computed&quot;&quot;&gt;bmp&lt;/Value&gt;&lt;/Eq&gt;
+&lt;Or&gt;&lt;Gt&gt;&lt;FieldRef Name=&quot;&quot;ImageWidth&quot;&quot; /&gt;&lt;Value Type=&quot;&quot;Integer&quot;&quot;&gt;200&lt;/Value&gt;&lt;/Gt&gt;
+&lt;Gt&gt;&lt;FieldRef Name=&quot;&quot;ImageHeight&quot;&quot; /&gt;&lt;Value Type=&quot;&quot;Integer&quot;&quot;&gt;200&lt;/Value&gt;&lt;/Gt&gt;&lt;/Or&gt;&lt;/And&gt;&lt;/Where&gt;
+&lt;OrderBy&gt;&lt;FieldRef Ascending=&quot;&quot;FALSE&quot;&quot; Name=&quot;&quot;FileSizeDisplay&quot;&quot; /&gt;&lt;/OrderBy&gt;&lt;/Query&gt;&quot;;
+</pre> <br /><b>And in CAML.NET:</b><br /> <br /><pre>
+string queryBitmapImages = 
+    CAML.Query(
+        CAML.Where(
+            CAML.And(
+                CAML.Eq(
+                    CAML.FieldRef(&quot;DocIcon&quot;),
+                    CAML.Value(&quot;Computed&quot;,&quot;bmp&quot;)
+                ),
+                CAML.Or(
+                    CAML.Gt(
+                        CAML.FieldRef(&quot;ImageWidth&quot;),
+                        CAML.Value(200)
+                    ),
+                    CAML.Gt(
+                        CAML.FieldRef(&quot;ImageHeight&quot;),
+                        CAML.Value(200)
+                    )
+                )
+            )
+        ),
+        CAML.OrderBy(
+            CAML.FieldRef(&quot;FileSizeDisplay&quot;, CAML.SortType.Descending))
+    );
+</pre> <br />Note the use of the overloaded CAML.Value constructor, which simply takes an integer value as an argument.  The generated CAML sets the Value type automatically depending on the type of argument you pass in.  There are lots of other places in the CAML schema where the .NET CLR can help to reduce that overall surface area and improve developer productivity.<br /> <br />
+</body>
+</html>
