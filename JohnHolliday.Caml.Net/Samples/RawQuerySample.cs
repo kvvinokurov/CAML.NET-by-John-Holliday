@@ -27,13 +27,8 @@
 // -----------------------------------------------------------------------------
 
 #endregion
-using System;
-using System.Data;
-using System.Collections.Generic;
-using System.Text;
+
 using Microsoft.SharePoint;
-using Microsoft.SharePoint.Utilities;
-using JohnHolliday.Caml.Net.Properties;
 
 // This sample shows how the CAML.NET framework can be used in 
 // a typical scenario where data resides in one or more SharePoint
@@ -42,21 +37,21 @@ using JohnHolliday.Caml.Net.Properties;
 namespace JohnHolliday.Caml.Net
 {
     /// <summary>
-    /// This class demonstrates using the CAML.NET framework directly by using the
-    /// static string conversion methods to produce the desired CAML query string.  Once
-    /// the string is built, it can be applied directly to any SharePoint object that
-    /// understands raw CAML.
+    ///     This class demonstrates using the CAML.NET framework directly by using the
+    ///     static string conversion methods to produce the desired CAML query string.  Once
+    ///     the string is built, it can be applied directly to any SharePoint object that
+    ///     understands raw CAML.
     /// </summary>
     public class RawQuerySample
     {
         /// <summary>
-        /// Retrieves all documents of type "Job Sheet" from a given list.
+        ///     Retrieves all documents of type "Job Sheet" from a given list.
         /// </summary>
         /// <param name="list">the SPList containing the documents</param>
         public static SPListItemCollection GetJobSheets(SPList list)
         {
             // Create a new query object.
-            SPQuery query = new SPQuery();
+            var query = new SPQuery();
 
             // Assign the query string by using the raw CAML.NET string conversion operators.
             query.Query = CAML.Where(CAML.Eq(CAML.FieldRef("Document Type"), CAML.Value("Job Sheet")));

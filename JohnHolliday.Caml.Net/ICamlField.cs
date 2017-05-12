@@ -27,25 +27,24 @@
 // -----------------------------------------------------------------------------
 
 #endregion
-using System;
-using System.Collections.Generic;
+
 using System.Reflection;
-using System.Text;
 using Microsoft.SharePoint;
 
 namespace JohnHolliday.Caml.Net
 {
     /// <summary>
-    /// Used to indicate fields which are mapped to SharePoint site columns.
+    ///     Used to indicate fields which are mapped to SharePoint site columns.
     /// </summary>
     public interface ICamlField
     {
         /// <summary>
-        /// Specifies the target site column name.
+        ///     Specifies the target site column name.
         /// </summary>
-        String FieldName { get; }
+        string FieldName { get; }
+
         /// <summary>
-        /// Updates the value of the associated field.
+        ///     Updates the value of the associated field.
         /// </summary>
         /// <param name="target">the object containing the field to be set</param>
         /// <param name="listItem">the list item containing the field value</param>

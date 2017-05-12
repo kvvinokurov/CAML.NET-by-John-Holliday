@@ -27,49 +27,38 @@
 // -----------------------------------------------------------------------------
 
 #endregion
+
 using System;
 using System.Reflection;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.SharePoint;
 
 namespace JohnHolliday.Caml.Net
 {
     /// <summary>
-    /// This attribute is used to declare an explicit mapping
-    /// between a column in a SharePoint list and a data member
-    /// of a custom class.
+    ///     This attribute is used to declare an explicit mapping
+    ///     between a column in a SharePoint list and a data member
+    ///     of a custom class.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field)]
     public class CamlField : Attribute, ICamlField
     {
-        string m_fieldName = string.Empty;
-
         /// <summary>
-        /// Constructor that accepts the SharePoint field name to which
-        /// the member is to be mapped.
+        ///     Constructor that accepts the SharePoint field name to which
+        ///     the member is to be mapped.
         /// </summary>
         /// <param name="fieldName"></param>
         public CamlField(string fieldName)
         {
-            m_fieldName = fieldName;
+            FieldName = fieldName;
         }
 
         #region ICamlField Members
 
         /// <summary>
-        /// 
         /// </summary>
-        public String FieldName
-        {
-            get
-            {
-                return m_fieldName;
-            }
-        }
+        public string FieldName { get; } = string.Empty;
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="target"></param>
         /// <param name="listItem"></param>
@@ -77,7 +66,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns></returns>
         public bool SetValue(object target, SPListItem listItem, FieldInfo fieldInfo)
         {
-            bool result = false;
+            var result = false;
             try
             {
                 fieldInfo.SetValue(target, listItem[FieldName]);
@@ -85,6 +74,7 @@ namespace JohnHolliday.Caml.Net
             }
             catch
             {
+                // ignored
             }
             return result;
         }

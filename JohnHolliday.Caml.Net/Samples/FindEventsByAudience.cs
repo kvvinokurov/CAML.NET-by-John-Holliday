@@ -27,32 +27,29 @@
 // -----------------------------------------------------------------------------
 
 #endregion
+
 using System;
-using System.Data;
 using System.Collections.Generic;
-using System.Text;
 using Microsoft.SharePoint;
-using Microsoft.SharePoint.Utilities;
-using JohnHolliday.Caml.Net.Properties;
 
 namespace JohnHolliday.Caml.Net.Samples
 {
     /// <summary>
-    /// This is a simple query that retrieves all events where the "Audience" field
-    /// contains a given audience name and the event date is greater or equal to
-    /// the current date.
+    ///     This is a simple query that retrieves all events where the "Audience" field
+    ///     contains a given audience name and the event date is greater or equal to
+    ///     the current date.
     /// </summary>
     public class FindEventsByAudience : CamlQuery
     {
         /// <summary>
-        /// The audience name to match.
+        ///     The audience name to match.
         /// </summary>
-        private string m_audienceName = string.Empty;
+        private readonly string m_audienceName = string.Empty;
 
         /// <summary>
-        /// The constructor passes the query definition along to the base class, which
-        /// evaluates and stored the CAML string used to perform the query when one
-        /// of the Fetch() methods is called.
+        ///     The constructor passes the query definition along to the base class, which
+        ///     evaluates and stored the CAML string used to perform the query when one
+        ///     of the Fetch() methods is called.
         /// </summary>
         /// <param name="audienceName"></param>
         public FindEventsByAudience(string audienceName)
@@ -61,7 +58,7 @@ namespace JohnHolliday.Caml.Net.Samples
         }
 
         /// <summary>
-        /// The name of the audience to match.
+        ///     The name of the audience to match.
         /// </summary>
         public string AudienceName
         {
@@ -69,7 +66,7 @@ namespace JohnHolliday.Caml.Net.Samples
         }
 
         /// <summary>
-        ///  Custom override that gets or sets the QueryXml.
+        ///     Custom override that gets or sets the QueryXml.
         /// </summary>
         public override string QueryXml
         {
@@ -77,75 +74,69 @@ namespace JohnHolliday.Caml.Net.Samples
             {
                 // construct the CAML query string
                 return CAML.Where(CAML.And(
-                    CAML.Contains(CAML.FieldRef("Audience"), CAML.Value(this.AudienceName)),
+                    CAML.Contains(CAML.FieldRef("Audience"), CAML.Value(AudienceName)),
                     CAML.Geq(CAML.FieldRef("EventDate"), CAML.Value(DateTime.Today))));
             }
-            set
-            {
-                base.QueryXml = value;
-            }
+            set { base.QueryXml = value; }
         }
 
         /// <summary>
-        /// This static method shows how this class could be used in an application.
+        ///     This static method shows how this class could be used in an application.
         /// </summary>
         public static void Test()
         {
             // Create an instance of the query that finds events for the "Employee" audience.
-            FindEventsByAudience queryEmployeeEvents = new FindEventsByAudience("Employee");
+            var queryEmployeeEvents = new FindEventsByAudience("Employee");
 
             // Create a second instance that finds events for the "VIP" audience.
-            FindEventsByAudience queryVIPEvents = new FindEventsByAudience("VIP");
+            var queryVIPEvents = new FindEventsByAudience("VIP");
 
             // Open a web and execute both instances.
-            using (SPWeb web = new SPSite("http://localhost").OpenWeb())
+            using (var web = new SPSite("http://localhost").OpenWeb())
             {
                 // Get the list of employee events.
-                IList<SPListItem> employeeEvents = queryEmployeeEvents.Fetch(web);
+                var employeeEvents = queryEmployeeEvents.Fetch(web);
                 // Get the list of vip events and extend the search to include all subwebs.
-                IList<SPListItem> vipEvents = queryVIPEvents.Fetch(web, CAML.QueryScope.Recursive);
+                var vipEvents = queryVIPEvents.Fetch(web, CAML.QueryScope.Recursive);
 
                 // ... custom code omitted to work with the resulting list items
             }
         }
 
-#region Custom Data Binding Example
+        #region Custom Data Binding Example
 
         /// <summary>
-        /// Defines a class for working with event list items.
+        ///     Defines a class for working with event list items.
         /// </summary>
         private class SpecialEvent
         {
             /// <summary>
-            /// Maps the SharePoint "Title" column to the event name.
+            ///     Maps the SharePoint "Date" column to the event date.
             /// </summary>
-            [CamlField("Title")]
-            private string EventName = string.Empty;
+            [CamlField("Date")] private DateTime EventDate = DateTime.Today;
 
             /// <summary>
-            /// Maps the SharePoint "Date" column to the event date.
+            ///     Maps the SharePoint "Title" column to the event name.
             /// </summary>
-            [CamlField("Date")]
-            private DateTime EventDate = DateTime.Today;
+            [CamlField("Title")] private string EventName = string.Empty;
 
-            public SpecialEvent() { } // needed for reflection
+            // needed for reflection
 
             /// <summary>
-            /// Retrieves a list of employee events.
+            ///     Retrieves a list of employee events.
             /// </summary>
             /// <param name="web">the web containing the events list</param>
             /// <returns></returns>
             public static IList<SpecialEvent> FindEmployeeEvents(SPWeb web)
             {
                 // Create an instance of the FindByAudience query that filters by employee.
-                FindEventsByAudience queryEmployeeEvents = new FindEventsByAudience("Employee");
+                var queryEmployeeEvents = new FindEventsByAudience("Employee");
 
                 // Use the generic Fetch method to bind to the SpecialEvent class.
                 return queryEmployeeEvents.Fetch<SpecialEvent>(web);
             }
         }
 
-#endregion
-
+        #endregion
     }
 }

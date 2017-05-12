@@ -27,58 +27,95 @@
 // -----------------------------------------------------------------------------
 
 #endregion
+
 using System;
-using System.Data;
 using System.Collections.Generic;
-using System.Text;
+using System.Data;
+using System.Linq;
 using System.Reflection;
-using System.Web;
-using System.Web.UI;
+using System.Text;
 using System.Web.UI.WebControls;
 using Microsoft.SharePoint;
-using Microsoft.SharePoint.Utilities;
 using Microsoft.SharePoint.WebControls;
 
 namespace JohnHolliday.Caml.Net
 {
     /// <summary>
-    /// A wrapper class for binding query data.
+    ///     A wrapper class for binding query data.
     /// </summary>
-    /// <remarks>This class is implemented as an attribute so that CAML queries
-    /// can be attached to other objects such as list and site definitions.</remarks>
-    [AttributeUsage(AttributeTargets.Class,AllowMultiple=true)]
+    /// <remarks>
+    ///     This class is implemented as an attribute so that CAML queries
+    ///     can be attached to other objects such as list and site definitions.
+    /// </remarks>
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class CamlQuery : Attribute, ICamlQuery
     {
         /// <summary>
-        /// The CAML string that defines the query, for example:
-        /// <![CDATA[<Where><Contains><FieldRef Name="Author"/><Value Type="Text">Holliday</Value></Contains></Where>]]>
-        /// </summary>
-        private string m_queryXml = string.Empty;
-        /// <summary>
-        /// The CAML string that defines the query scope.
+        ///     The CAML string that defines the query scope.
         /// </summary>
         private string m_listsXml = string.Empty;
+
         /// <summary>
-        /// The CAML string that defines the fields that should be included in the query results.
+        ///     The CAML string that defines the query, for example:
+        ///     <![CDATA[<Where><Contains><FieldRef Name="Author"/><Value Type="Text">Holliday</Value></Contains></Where>]]>
+        /// </summary>
+        private string m_queryXml = string.Empty;
+
+        /// <summary>
+        ///     The CAML string that defines the fields that should be included in the query results.
         /// </summary>
         private string m_viewFieldsXml = string.Empty;
 
         /// <summary>
-        /// This method gives an example of how to construct CamlQuery objects
-        /// using the constructor that accepts the entire query string.
+        ///     Default constructor.
+        /// </summary>
+        public CamlQuery()
+        {
+        }
+
+        /// <summary>
+        ///     Constructor that accepts a single string argument that
+        ///     specifies the underlying CAML query to be used.
         /// </summary>
         /// <remarks>
-        /// Note that you simply append the GroupBy and OrderBy clauses to the
-        /// query string.
+        /// </remarks>
+        /// <param name="query">the CAML query string</param>
+        public CamlQuery(string query)
+        {
+            QueryXml = query;
+        }
+
+        /// <summary>
+        ///     Extended constructor that accepts the CAML query string
+        ///     along with a variable length list of field references.
+        /// </summary>
+        /// <param name="query">the CAML query string</param>
+        /// <param name="viewFields">a list of FieldRef clauses that specify which fields to include in the result set</param>
+        public CamlQuery(string query, params string[] viewFields)
+        {
+            m_queryXml = query;
+            var sb = new StringBuilder();
+            foreach (var field in viewFields)
+                sb.Append(field);
+            ViewFieldsXml = sb.ToString();
+        }
+
+        /// <summary>
+        ///     This method gives an example of how to construct CamlQuery objects
+        ///     using the constructor that accepts the entire query string.
+        /// </summary>
+        /// <remarks>
+        ///     Note that you simply append the GroupBy and OrderBy clauses to the
+        ///     query string.
         /// </remarks>
         public static void Example()
         {
-            CamlQuery q = new CamlQuery(
+            var q = new CamlQuery(
                 CAML.Where(
                     CAML.Contains(
                         CAML.FieldRef("Author"),
                         CAML.Value("Holliday")
-                        )) + 
+                        )) +
                 CAML.GroupBy(
                     CAML.FieldRef("Title")) +
                 CAML.OrderBy(
@@ -88,39 +125,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public CamlQuery() { }
-
-        /// <summary>
-        /// Constructor that accepts a single string argument that
-        /// specifies the underlying CAML query to be used.
-        /// </summary>
-        /// <remarks>
-        /// </remarks>
-        /// <param name="query">the CAML query string</param>
-        public CamlQuery(string query) 
-        { 
-            this.QueryXml = query; 
-        }
-
-        /// <summary>
-        /// Extended constructor that accepts the CAML query string 
-        /// along with a variable length list of field references.
-        /// </summary>
-        /// <param name="query">the CAML query string</param>
-        /// <param name="viewFields">a list of FieldRef clauses that specify which fields to include in the result set</param>
-        public CamlQuery(string query, params string[] viewFields)
-        {
-            m_queryXml = query;
-            StringBuilder sb = new StringBuilder();
-            foreach (string field in viewFields)
-                sb.Append(field);
-            this.ViewFieldsXml = sb.ToString();
-        }
-
-        /// <summary>
-        /// Standard override for string conversion.
+        ///     Standard override for string conversion.
         /// </summary>
         /// <returns>the query associated with this CAML instance</returns>
         public override string ToString()
@@ -129,7 +134,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Implicit string conversion support.
+        ///     Implicit string conversion support.
         /// </summary>
         public static implicit operator string(CamlQuery caml)
         {
@@ -137,26 +142,26 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// A static method for quickly retrieving items from a list based on a query string.
+        ///     A static method for quickly retrieving items from a list based on a query string.
         /// </summary>
         /// <param name="list">the list containing the items</param>
         /// <param name="queryXml">the query xml</param>
         /// <returns>the collection of matching items</returns>
         public static IList<SPListItem> Fetch(SPList list, string queryXml)
         {
-            CamlQuery query = new CamlQuery(queryXml);
+            var query = new CamlQuery(queryXml);
             return query.Fetch(list);
         }
 
         #region ICamlQuery Members
 
         /// <summary>
-        /// Gets or sets the query string for this instance.
+        ///     Gets or sets the query string for this instance.
         /// </summary>
         /// <remarks>
-        /// The QueryXml string includes the Where clause and any OrderBy
-        /// or GroupBy qualifiers.  When deriving a class from CamlQuery,
-        /// you can override this property to supply a custom query string.
+        ///     The QueryXml string includes the Where clause and any OrderBy
+        ///     or GroupBy qualifiers.  When deriving a class from CamlQuery,
+        ///     you can override this property to supply a custom query string.
         /// </remarks>
         public virtual string QueryXml
         {
@@ -165,7 +170,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Gets or sets the Lists clause for this instance.
+        ///     Gets or sets the Lists clause for this instance.
         /// </summary>
         public virtual string ListsXml
         {
@@ -174,7 +179,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Gets or sets the ViewFields clause for this instance.
+        ///     Gets or sets the ViewFields clause for this instance.
         /// </summary>
         public virtual string ViewFieldsXml
         {
@@ -183,7 +188,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query against a site collection.
+        ///     Executes the query against a site collection.
         /// </summary>
         public IList<SPListItem> Fetch(SPSite site)
         {
@@ -191,7 +196,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query against a website.
+        ///     Executes the query against a website.
         /// </summary>
         public IList<SPListItem> Fetch(SPWeb web)
         {
@@ -199,25 +204,29 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Creates and initializes an SPQuery object.
+        ///     Creates and initializes an SPQuery object.
         /// </summary>
         public SPQuery CreateQuery()
         {
-            SPQuery query = new SPQuery();
-            query.Query = this.QueryXml;
-            query.ViewFields = this.ViewFieldsXml;
+            var query = new SPQuery
+            {
+                Query = QueryXml,
+                ViewFields = ViewFieldsXml
+            };
             return query;
         }
 
         /// <summary>
-        /// Creates and initializes an SPSiteDataQuery object for a given scope.
+        ///     Creates and initializes an SPSiteDataQuery object for a given scope.
         /// </summary>
         public SPSiteDataQuery CreateSiteDataQuery(CAML.QueryScope scope)
         {
-            SPSiteDataQuery query = new SPSiteDataQuery();
-            query.Query = this.QueryXml;
-            query.ViewFields = this.ViewFieldsXml;
-            query.Lists = this.ListsXml;
+            var query = new SPSiteDataQuery
+            {
+                Query = QueryXml,
+                ViewFields = ViewFieldsXml,
+                Lists = ListsXml
+            };
 
             // Only use the Webs clause if the scope is different than the default.
             if (scope != CAML.QueryScope.WebOnly)
@@ -228,7 +237,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Retrieves a collection of list items from a SharePoint web using the attached query.
+        ///     Retrieves a collection of list items from a SharePoint web using the attached query.
         /// </summary>
         /// <remarks>The query considers</remarks>
         /// <param name="web">the web from which to fetch the items</param>
@@ -236,11 +245,11 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a list containing the resulting items</returns>
         public IList<SPListItem> Fetch(SPWeb web, CAML.QueryScope scope)
         {
-            List<SPListItem> items = new List<SPListItem>();
+            var items = new List<SPListItem>();
             try
             {
                 // Create the query.
-                SPSiteDataQuery query = CreateSiteDataQuery(scope);
+                var query = CreateSiteDataQuery(scope);
 
                 // Execute the query.
                 DataTable table = web.GetSiteData(query);
@@ -249,61 +258,60 @@ namespace JohnHolliday.Caml.Net
                 // of SPListItem instances.
                 foreach (DataRow row in table.Rows)
                 {
-                    Guid listGuid = new Guid(row["ListId"].ToString());
-                    int itemIndex = Int32.Parse(row["ID"].ToString()) - 1;
-
-                    SPList itemList = null;
+                    var listGuid = new Guid(row["ListId"].ToString());
+                    var itemIndex = int.Parse(row["ID"].ToString()) - 1;
 
                     try
                     {
-                        itemList = web.Lists[listGuid];
+                        var itemList = web.Lists[listGuid];
                         items.Add(itemList.Items[itemIndex]);
                     }
                     catch (Exception x)
                     {
-                        string s = x.Message;
+                        var s = x.Message;
                     }
                 }
             }
             catch (Exception x)
             {
-                string s = x.Message;
+                var s = x.Message;
             }
             return items;
         }
 
         /// <summary>
-        /// Executes the query against a list.
+        ///     Executes the query against a list.
         /// </summary>
         public IList<SPListItem> Fetch(SPList list)
         {
-            List<SPListItem> items = new List<SPListItem>();
+            var items = new List<SPListItem>();
             try
             {
                 // Fetch the items.
-                foreach (SPListItem item in list.GetItems(CreateQuery()))
-                    items.Add(item);
+                items.AddRange(list.GetItems(CreateQuery()).Cast<SPListItem>());
             }
             catch
             {
+                // ignored
             }
 
             return items;
         }
 
         /// <summary>
-        /// Executes the query against a website for a given scope and then binds to a specified object class.
+        ///     Executes the query against a website for a given scope and then binds to a specified object class.
         /// </summary>
         public IList<T> Fetch<T>(SPWeb web, CAML.QueryScope scope) where T : new()
         {
             IList<T> result = new List<T>();
-            BindingFlags flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-            foreach (SPListItem item in Fetch(web, scope))
+            const BindingFlags flags =
+                BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+            foreach (var item in Fetch(web, scope))
             {
-                T t = new T();
-                foreach (FieldInfo info in t.GetType().GetFields(flags))
+                var t = new T();
+                foreach (var info in t.GetType().GetFields(flags))
                 {
-                    foreach (ICamlField field in (ICamlField[])info.GetCustomAttributes(typeof(CamlField), false))
+                    foreach (var field in (ICamlField[]) info.GetCustomAttributes(typeof (CamlField), false))
                     {
                         field.SetValue(t, item, info);
                     }
@@ -314,18 +322,18 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query against a given site collection and then binds to a specified object class.
+        ///     Executes the query against a given site collection and then binds to a specified object class.
         /// </summary>
         public IList<T> Fetch<T>(SPSite site) where T : new()
         {
             IList<T> result = new List<T>();
-            BindingFlags flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-            foreach (SPListItem item in Fetch(site))
+            var flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+            foreach (var item in Fetch(site))
             {
-                T t = new T();
-                foreach (FieldInfo info in t.GetType().GetFields(flags))
+                var t = new T();
+                foreach (var info in t.GetType().GetFields(flags))
                 {
-                    foreach (ICamlField field in (ICamlField[])info.GetCustomAttributes(typeof(CamlField), false))
+                    foreach (var field in (ICamlField[]) info.GetCustomAttributes(typeof (CamlField), false))
                     {
                         field.SetValue(t, item, info);
                     }
@@ -335,7 +343,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query against a given SPWeb and binds to a specified object class.
+        ///     Executes the query against a given SPWeb and binds to a specified object class.
         /// </summary>
         public IList<T> Fetch<T>(SPWeb web) where T : new()
         {
@@ -344,18 +352,18 @@ namespace JohnHolliday.Caml.Net
 
 
         /// <summary>
-        /// Executes the query against a given list and then binds to a specified object class.
+        ///     Executes the query against a given list and then binds to a specified object class.
         /// </summary>
         public IList<T> Fetch<T>(SPList list) where T : new()
         {
             IList<T> result = new List<T>();
-            BindingFlags flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-            foreach (SPListItem item in Fetch(list))
+            var flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+            foreach (var item in Fetch(list))
             {
-                T t = new T();
-                foreach (FieldInfo info in t.GetType().GetFields(flags))
+                var t = new T();
+                foreach (var info in t.GetType().GetFields(flags))
                 {
-                    foreach (ICamlField field in (ICamlField[])info.GetCustomAttributes(typeof(CamlField), false))
+                    foreach (var field in (ICamlField[]) info.GetCustomAttributes(typeof (CamlField), false))
                     {
                         field.SetValue(t, item, info);
                     }
@@ -366,7 +374,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Determines whether a column should be bound to a data grid.
+        ///     Determines whether a column should be bound to a data grid.
         /// </summary>
         /// <param name="col"></param>
         /// <returns></returns>
@@ -379,7 +387,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Binds this query to an SPGridView control.
+        ///     Binds this query to an SPGridView control.
         /// </summary>
         /// <param name="web"></param>
         /// <param name="gridView"></param>
@@ -400,9 +408,11 @@ namespace JohnHolliday.Caml.Net
                 {
                     if (IsBindableColumn(column))
                     {
-                        BoundField col = new BoundField();
-                        col.DataField = column.ColumnName;
-                        col.HeaderText = string.IsNullOrEmpty(column.Caption) ? column.ColumnName : column.Caption;
+                        var col = new BoundField
+                        {
+                            DataField = column.ColumnName,
+                            HeaderText = string.IsNullOrEmpty(column.Caption) ? column.ColumnName : column.Caption
+                        };
                         gridView.Columns.Add(col);
                     }
                 }
@@ -414,11 +424,11 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         /// <remarks>
-        /// Optionally initializes the gridview columns using the fields associated
-        /// with this query.
+        ///     Optionally initializes the gridview columns using the fields associated
+        ///     with this query.
         /// </remarks>
         /// <param name="gridView">the gridView to bind to</param>
         /// <param name="web">the web containing the data</param>
@@ -430,7 +440,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         public void DataBind(SPGridView gridView, SPWeb web, CAML.QueryScope scope)
         {
@@ -438,7 +448,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         public void DataBind(SPGridView gridView, SPWeb web)
         {
@@ -446,7 +456,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         public void DataBind(SPGridView gridView)
         {
@@ -454,7 +464,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         public void DataBind(SPGridView gridView, SPSite site, bool initColumns)
         {
@@ -462,7 +472,7 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         public void DataBind(SPGridView gridView, SPSite site)
         {
@@ -470,22 +480,23 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         public void DataBind(SPGridView gridView, SPList list, bool initColumns)
         {
-            SPSiteDataQuery query = CreateSiteDataQuery(CAML.QueryScope.WebOnly);
+            var query = CreateSiteDataQuery(CAML.QueryScope.WebOnly);
             query.Lists = CAML.Lists(CAML.List(list.ID));
             BindToGridView(list.ParentWeb, gridView, query, initColumns);
         }
 
         /// <summary>
-        /// Executes the query and binds the results to a gridview.
+        ///     Executes the query and binds the results to a gridview.
         /// </summary>
         public void DataBind(SPGridView gridView, SPList list)
         {
             DataBind(gridView, list, true);
         }
+
         #endregion
     }
 }
