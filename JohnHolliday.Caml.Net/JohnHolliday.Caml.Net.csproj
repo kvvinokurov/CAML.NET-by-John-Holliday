@@ -92,6 +92,7 @@
     <Content Include="Documentation\Usage.htm" />
     <Content Include="Resources\Camel.ico" />
     <Content Include="Resources\Camel.png" />
+    <Content Include="Resources\camldotnet.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="JohnHolliday.Caml.Net.nuspec" />
