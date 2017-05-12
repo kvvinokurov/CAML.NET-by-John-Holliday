@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>JohnHolliday.Caml.Net</id>
+    <version>2.0.0</version>
+    <title>CAML.NET for SharePoint</title>
+    <authors>John Holliday and Associates, Inc.</authors>
+    <owners>John Holliday and Associates, Inc.</owners>
+    <licenseUrl>https://camldotnet.codeplex.com/license</licenseUrl>
+    <projectUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday</projectUrl>
+    <iconUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CAML.NET for MS SharePoint 2013</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright © John Holliday and Associates, Inc. 2007</copyright>
+    <tags>CAML SharePoint JohnHolliday</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\JohnHolliday.Caml.Net.dll" target="lib\net45\JohnHolliday.Caml.Net.dll"/>
+    <file src="bin\Release\JohnHolliday.Caml.Net.xml" target="lib\net45\JohnHolliday.Caml.Net.xml"/>
+    <file src="Documentation\**" target="content"/>
+  </files>
+</package>
