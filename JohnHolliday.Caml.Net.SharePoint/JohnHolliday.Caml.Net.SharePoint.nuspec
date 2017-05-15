@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>JohnHolliday.Caml.Net.SharePoint</id>
+    <version>2.1.0</version>
+    <title>CAML.NET Utilities for SharePoint</title>
+    <authors>John Holliday and Associates, Inc.</authors>
+    <owners>John Holliday and Associates, Inc.</owners>
+    <licenseUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday/wiki/License</licenseUrl>
+    <projectUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/kvvinokurov/CAML.NET-by-John-Holliday/VS2015/JohnHolliday.Caml.Net/Camel.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CAML.NET Utilities for MS SharePoint</description>
+    <releaseNotes>SharePoint Utilities move from Core package.</releaseNotes>
+    <copyright>Copyright © John Holliday and Associates, Inc. 2007</copyright>
+    <tags>CAML SharePoint JohnHolliday</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\JohnHolliday.Caml.Net.SharePoint.dll" target="lib\net45\JohnHolliday.Caml.Net.SharePoint.dll" />
+    <file src="bin\Release\JohnHolliday.Caml.Net.SharePoint.xml" target="lib\net45\JohnHolliday.Caml.Net.SharePoint.xml" />
+  </files>
+</package>

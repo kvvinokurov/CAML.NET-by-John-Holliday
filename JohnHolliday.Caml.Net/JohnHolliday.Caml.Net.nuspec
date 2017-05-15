@@ -1,22 +1,23 @@
 <?xml version="1.0"?>
+
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>JohnHolliday.Caml.Net</id>
-    <version>2.0.1</version>
-    <title>CAML.NET for SharePoint</title>
+    <version>2.1.0</version>
+    <title>CAML.NET Core</title>
     <authors>John Holliday and Associates, Inc.</authors>
     <owners>John Holliday and Associates, Inc.</owners>
-    <licenseUrl>https://camldotnet.codeplex.com/license</licenseUrl>
+    <licenseUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday/wiki/License</licenseUrl>
     <projectUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/kvvinokurov/CAML.NET-by-John-Holliday/VS2015/JohnHolliday.Caml.Net/Camel.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>CAML.NET for MS SharePoint 2013</description>
-    <releaseNotes></releaseNotes>
+    <description>CAML.NET Core</description>
+    <releaseNotes>SharePoint extensions move to another package - JohnHolliday.Caml.Net.SharePoint.</releaseNotes>
     <copyright>Copyright © John Holliday and Associates, Inc. 2007</copyright>
     <tags>CAML SharePoint JohnHolliday</tags>
   </metadata>
   <files>
-    <file src="bin\Release\JohnHolliday.Caml.Net.dll" target="lib\net45\JohnHolliday.Caml.Net.dll"/>
-    <file src="bin\Release\JohnHolliday.Caml.Net.xml" target="lib\net45\JohnHolliday.Caml.Net.xml"/>
+    <file src="bin\Release\JohnHolliday.Caml.Net.dll" target="lib\net45\JohnHolliday.Caml.Net.dll" />
+    <file src="bin\Release\JohnHolliday.Caml.Net.xml" target="lib\net45\JohnHolliday.Caml.Net.xml" />
   </files>
 </package>

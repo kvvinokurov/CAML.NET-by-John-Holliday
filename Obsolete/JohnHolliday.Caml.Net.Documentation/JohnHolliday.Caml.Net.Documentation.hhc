@@ -1,0 +1,699 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML/EN">
+<HTML>
+  <BODY>
+<UL>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="JohnHolliday.Caml.Net Namespace">
+    <param name="Local" value="html\4dcfc0f3-faed-b4fa-8cd7-ab6584814d45.htm">
+  </OBJECT></LI>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CAML Class">
+      <param name="Local" value="html\5cbb162d-966e-a253-cdff-4192b33b2da7.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CAML Members">
+        <param name="Local" value="html\a8bdefe0-14e6-4afc-a255-3f8f8f0204de.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CAML Constructor ">
+        <param name="Local" value="html\4f5fe0dc-7c0e-4700-cf00-3ba138ae46a4.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CAML Methods ">
+        <param name="Local" value="html\3397fd09-4581-6ca4-25a9-e5a2dd1911bc.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="And Method ">
+          <param name="Local" value="html\f42d42e7-b38c-799f-5675-a93e13210b81.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="BeginsWith Method ">
+          <param name="Local" value="html\d4ef6752-467d-50f3-1dbd-2c2eeac10f5e.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Contains Method ">
+          <param name="Local" value="html\35fc2fc1-e846-db72-5a07-8bbd1fb9084b.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="DateRangesOverlap Method ">
+          <param name="Local" value="html\aa0b94ea-ee86-b060-05dd-958824c53e89.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Eq Method ">
+          <param name="Local" value="html\e11f77cf-d9eb-2fff-1754-ce5b03762931.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="FieldRef Method ">
+          <param name="Local" value="html\0861d242-31cc-b569-2346-6b8394e4f155.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="FieldRef Method (String)">
+            <param name="Local" value="html\60f6f511-f9ab-b6b1-ef81-330a32ee22a7.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="FieldRef Method (String, CAML.SortType)">
+            <param name="Local" value="html\72ba0f34-0721-117a-2644-3fbd31ed03b3.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Geq Method ">
+          <param name="Local" value="html\f796d3a0-b327-3b15-e27a-8c0ff9608b9e.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="GroupBy Method ">
+          <param name="Local" value="html\9ab943d3-6581-4ce4-c34c-14063405e40a.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="GroupBy Method (String)">
+            <param name="Local" value="html\9fa189c4-2bcf-16e7-66a2-b932c5501462.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="GroupBy Method (String, Boolean)">
+            <param name="Local" value="html\04eb5812-1bb3-7b41-7ac5-f4c0f97a9089.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Gt Method ">
+          <param name="Local" value="html\1a2fe3be-0624-7ef9-6e0c-b3edf55ec527.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="IsNotNull Method ">
+          <param name="Local" value="html\f2f3a658-baa7-a1dd-9f6b-8b48533edc91.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="IsNull Method ">
+          <param name="Local" value="html\2d9080c9-657e-6de6-2ba9-25b445e29e5d.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Leq Method ">
+          <param name="Local" value="html\679724e3-22b1-2c5c-3eb0-5d2fe360a5dc.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="List Method ">
+          <param name="Local" value="html\bc054d3f-88e5-ef5e-c528-0203cd27e7fe.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Lists Method ">
+          <param name="Local" value="html\b97d22d3-dfb8-25c1-3f39-e88e6e230d0b.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (String)">
+            <param name="Local" value="html\b2737083-86a0-d4a9-03d6-359a9ee51742.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (String, Boolean)">
+            <param name="Local" value="html\efda6272-5239-6c8e-acec-480a230eb7e6.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (String, Int32)">
+            <param name="Local" value="html\e199de7d-acef-aeed-39bd-53b81188c8f1.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (CAML.BaseType, String)">
+            <param name="Local" value="html\c100fb13-ac85-6a34-ddb6-2d80a04772c6.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (String, String, Boolean)">
+            <param name="Local" value="html\43a1cb95-61fc-45af-db13-7679cc824a72.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (CAML.BaseType, String, String)">
+            <param name="Local" value="html\74b62b2c-5ff2-a6dd-71c2-4732065d6e65.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (CAML.BaseType, String, String, Boolean)">
+            <param name="Local" value="html\1fc2e6d5-70fa-52c3-f304-c36109c28fbe.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Lists Method (CAML.BaseType, String, String, Boolean, Int32)">
+            <param name="Local" value="html\95dcd5d0-c9bc-11a9-8426-789e606ba1f0.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Lt Method ">
+          <param name="Local" value="html\5cfa4e0a-8fe4-f2a6-870d-1e32b725adf4.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Membership Method ">
+          <param name="Local" value="html\15359df0-2fb4-9351-edae-12c81358640a.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Membership Method (CAML.MembershipType)">
+            <param name="Local" value="html\521ddadb-15cb-fb93-130b-8ea8a39cfa92.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Membership Method (CAML.MembershipType, String)">
+            <param name="Local" value="html\5cec581c-790e-6ba2-1339-ddb42297e119.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Neq Method ">
+          <param name="Local" value="html\67ccd5d8-a4af-713c-d40f-f171c357c073.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Or Method ">
+          <param name="Local" value="html\f20cd199-1d88-ad40-57f9-320e024f1bb5.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="OrderBy Method ">
+          <param name="Local" value="html\38feafc7-9123-09c5-052e-22634392ac21.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="OrderBy Method (Object[])">
+            <param name="Local" value="html\45af8881-22d0-66b7-c48f-a3c2cb6a2f26.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="OrderBy Method (String)">
+            <param name="Local" value="html\e780f89d-db17-cc55-f064-192d8a656120.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ProjectProperty Method ">
+          <param name="Local" value="html\5b2292aa-9bf9-b26a-1a71-c912c80363f0.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="ProjectProperty Method (String)">
+            <param name="Local" value="html\79bfd4f4-ff7d-faf6-b3fa-6551bc607961.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="ProjectProperty Method (String, String)">
+            <param name="Local" value="html\d0df250e-44a6-7127-cdbc-1383f188c6df.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="ProjectProperty Method (String, String, CAML.AutoHyperlinkType, Boolean, Boolean, Boolean, Boolean, CAML.UrlEncodingType)">
+            <param name="Local" value="html\6a18c34c-0648-b47d-1a06-5f1098ce613b.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="SafeIdentifier Method ">
+          <param name="Local" value="html\97c6b284-b1bb-92b7-a105-ae67c9b1946e.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Tag Method ">
+          <param name="Local" value="html\288191bf-bdb3-4675-c985-c8598a0cd75f.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Tag Method (String, String, Object[])">
+            <param name="Local" value="html\9983381b-b0ac-0f49-5a2a-93d73c2e62a6.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Tag Method (String, String, String, String)">
+            <param name="Local" value="html\9d2dcba9-b89f-bab4-229c-8c5bc889e319.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Value Method ">
+          <param name="Local" value="html\9fd58fd6-9ae5-90d3-7065-a04007e2af9c.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Value Method (Boolean)">
+            <param name="Local" value="html\4cfed89b-5c17-da0b-bac5-4af2c394b11c.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Value Method (DateTime)">
+            <param name="Local" value="html\287019ce-370f-cb2f-7cfa-5e268e12f484.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Value Method (Int32)">
+            <param name="Local" value="html\66093c05-9720-afe0-43da-c5578478bc83.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Value Method (String)">
+            <param name="Local" value="html\386d735a-4113-2e57-5b83-79ad7535fa40.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Value Method (String, String)">
+            <param name="Local" value="html\9428a982-61fe-d35e-5208-7ef653729e70.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ViewFields Method ">
+          <param name="Local" value="html\2568cc92-d0ee-54d6-f6ac-55240578e19b.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Webs Method ">
+          <param name="Local" value="html\0286d052-a784-60e4-65bf-75900aaeb65d.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Where Method ">
+          <param name="Local" value="html\53635318-c901-e799-573e-493d4e852352.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="WithIndex Method ">
+          <param name="Local" value="html\e1065b9a-421e-7a86-b0fb-236bdc9e2a6e.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="XML Method ">
+          <param name="Local" value="html\6023d0aa-1d1b-43ab-85fa-fa11fc0f7f26.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CAML.AutoHyperlinkType Enumeration">
+      <param name="Local" value="html\ac605ffa-4fc5-886f-b4aa-e0418e86a96a.htm">
+    </OBJECT></LI>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CAML.BaseType Enumeration">
+      <param name="Local" value="html\758854e3-6a96-babc-505f-e5d41024814d.htm">
+    </OBJECT></LI>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CAML.MembershipType Enumeration">
+      <param name="Local" value="html\362b9bb5-094a-f893-ffc7-0ed916192970.htm">
+    </OBJECT></LI>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CAML.QueryScope Enumeration">
+      <param name="Local" value="html\e8010f3b-0407-ed89-9974-4cd037989a23.htm">
+    </OBJECT></LI>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CAML.SortType Enumeration">
+      <param name="Local" value="html\9d3f021c-1d7a-c138-5ae4-461a103f46cb.htm">
+    </OBJECT></LI>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CAML.UrlEncodingType Enumeration">
+      <param name="Local" value="html\f1bf8de7-6533-df3b-719f-b2fb926e9355.htm">
+    </OBJECT></LI>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CamlField Class">
+      <param name="Local" value="html\4698dff6-f33b-b62b-4752-acafa5215d94.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlField Members">
+        <param name="Local" value="html\011e35f7-1de2-62c2-6336-7a4466176b0b.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlField Constructor ">
+        <param name="Local" value="html\aab8e1ad-9489-99d8-1327-bb8b4df69836.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlField Methods ">
+        <param name="Local" value="html\f6335826-1d1d-e9fb-1a03-e7bb546a2825.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="SetValue Method ">
+          <param name="Local" value="html\659ba63b-88ae-6f1e-7fbf-c33ac68285a5.htm">
+        </OBJECT></LI>
+      </UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlField Properties ">
+        <param name="Local" value="html\18dba21d-2843-9bd4-60c0-2c419f046eba.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="FieldName Property ">
+          <param name="Local" value="html\77faf8a6-94de-dab5-8bff-64bba14d3834.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="CamlQuery Class">
+      <param name="Local" value="html\56fd49ed-095a-ac22-6e15-b8b736a8bb8e.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlQuery Members">
+        <param name="Local" value="html\e511dc33-a91d-d235-9ce7-a730eb19db62.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlQuery Constructor ">
+        <param name="Local" value="html\b0a0a305-9780-fb23-6230-f6db007a31c0.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CamlQuery Constructor ">
+          <param name="Local" value="html\98909489-1775-8c2c-d265-8cac96065e32.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CamlQuery Constructor (String)">
+          <param name="Local" value="html\e892c80f-6b05-e046-31ab-e21fbcf95048.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CamlQuery Constructor (String, String[])">
+          <param name="Local" value="html\3ff562be-719a-45e6-0556-c7b7c9a31548.htm">
+        </OBJECT></LI>
+      </UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlQuery Methods ">
+        <param name="Local" value="html\4f94191c-5f84-361c-1ed1-be8d02e8c053.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CreateQuery Method ">
+          <param name="Local" value="html\64134066-128c-b2c7-4724-8ed4c044d6ce.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CreateSiteDataQuery Method ">
+          <param name="Local" value="html\189407ca-7386-02b2-657e-af1635c52af3.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="DataBind Method ">
+          <param name="Local" value="html\c999f398-841b-60e0-9935-5125e7491b6b.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method ()">
+            <param name="Local" value="html\2cdd84eb-2017-e634-fae3-1ff0b4a01ab9.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, )">
+            <param name="Local" value="html\8fc2b3e7-f7d9-7744-ecf0-88f6605276f9.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, )">
+            <param name="Local" value="html\bf554142-10e4-f924-36f2-89146990e93e.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, )">
+            <param name="Local" value="html\845dffd6-a57a-c262-8066-38ce52d9c7f6.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , Boolean)">
+            <param name="Local" value="html\4069d7ac-b738-7203-077b-f2b6b1a2e881.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , Boolean)">
+            <param name="Local" value="html\41d03599-a7e9-a1d2-87e1-f4b30b0749e8.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , CAML.QueryScope)">
+            <param name="Local" value="html\22d39920-ec5e-361a-e43f-267647ceb702.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , CAML.QueryScope, Boolean)">
+            <param name="Local" value="html\29f5468b-526b-d4f8-7189-cbf31b526b69.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Example Method ">
+          <param name="Local" value="html\bc5496a9-ec46-d355-1036-f07b277af095.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Fetch Method ">
+          <param name="Local" value="html\35401cf2-3d96-eae6-17eb-399e3f11d85e.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method ()">
+            <param name="Local" value="html\616cd64b-ad1e-9ddb-bff6-6d8ce645f69c.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\116ae512-663e-94c3-6ba4-9873da30eb14.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method ()">
+            <param name="Local" value="html\2cef263d-59e7-91d3-e85a-753b4e2e5e0a.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\68268cd8-78c0-2ae4-1c45-201ba3f6371e.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\2b1fffd5-96e0-52d7-bde5-4833cbebe993.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method ()">
+            <param name="Local" value="html\f60886e8-97b9-e30f-13fd-c6cb94b2f03b.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method (, String)">
+            <param name="Local" value="html\c0dfca8d-7c69-05e8-62ab-b130027db8cd.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method (, CAML.QueryScope)">
+            <param name="Local" value="html\df6007c2-c776-181e-da86-576d4c618415.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\f41248c3-d238-5aeb-593e-6708b2011523.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Implicit Operator">
+          <param name="Local" value="html\be991d84-ad63-a544-2fbf-1d8738e58741.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToString Method ">
+          <param name="Local" value="html\e2ab9ce7-1e1a-9c81-8d8c-a9b3372bf1c2.htm">
+        </OBJECT></LI>
+      </UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="CamlQuery Properties ">
+        <param name="Local" value="html\36bacb45-930e-e5c4-0406-bf196ff51572.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ListsXml Property ">
+          <param name="Local" value="html\00ff21dc-cd13-4905-b46e-a3d4c2abd72d.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="QueryXml Property ">
+          <param name="Local" value="html\6da5141a-4845-e02b-f1c2-b185f0c38889.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ViewFieldsXml Property ">
+          <param name="Local" value="html\a991026f-0fa6-2ed9-a123-66d2a98f6f34.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="ICamlField Interface">
+      <param name="Local" value="html\37fd74ee-df0b-6e90-3a24-a40728f64500.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ICamlField Members">
+        <param name="Local" value="html\41a9915d-b9f9-39c5-d660-ac1e598a1986.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ICamlField Methods ">
+        <param name="Local" value="html\9d05e2f7-0961-02de-a798-c790d114283e.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="SetValue Method ">
+          <param name="Local" value="html\906aecd8-7cb2-af4b-b7a1-27d6f0f720c6.htm">
+        </OBJECT></LI>
+      </UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ICamlField Properties ">
+        <param name="Local" value="html\4f25d1ac-5a67-4423-666a-a70386586e60.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="FieldName Property ">
+          <param name="Local" value="html\b8e2cd45-29a1-5945-eab7-743fc2d1b67b.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="ICamlQuery Interface">
+      <param name="Local" value="html\f123c0c4-c47e-4749-409a-0463f1d23339.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ICamlQuery Members">
+        <param name="Local" value="html\9d05e842-f22f-ab05-b08f-0b7c66047942.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ICamlQuery Methods ">
+        <param name="Local" value="html\9dc0b415-0b9a-c4bd-63b5-b2967622c05c.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CreateQuery Method ">
+          <param name="Local" value="html\db537cc0-4ec4-7130-d992-f85884dfe578.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CreateSiteDataQuery Method ">
+          <param name="Local" value="html\ce4311ca-5d1e-993b-786d-ff1ab8be36ab.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="DataBind Method ">
+          <param name="Local" value="html\0d63fc76-c144-5e76-51f9-f0bc57bb7d36.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method ()">
+            <param name="Local" value="html\88c968e6-a74a-f8b8-a881-4c44ad81b8b9.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, )">
+            <param name="Local" value="html\07d4f817-a8c5-d713-ca06-e580e882e381.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, )">
+            <param name="Local" value="html\af66ffa0-186a-ea35-8e08-8f86fe572251.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, )">
+            <param name="Local" value="html\16628dd0-ce87-2c77-1e88-8a7b9efc6efa.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , Boolean)">
+            <param name="Local" value="html\bd5acaae-efae-16a2-3b83-521b94b935fb.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , Boolean)">
+            <param name="Local" value="html\97af4ccf-16c2-9008-9747-6aec05d84bbb.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , CAML.QueryScope)">
+            <param name="Local" value="html\348b8652-2bf8-abaf-44c4-4a5c7c2efa91.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="DataBind Method (, , CAML.QueryScope, Boolean)">
+            <param name="Local" value="html\baaab82b-30a9-b5f1-4930-7862768a3964.htm">
+          </OBJECT></LI>
+        </UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Fetch Method ">
+          <param name="Local" value="html\fd8dafe5-b981-ecd2-60cc-86052a4a1b99.htm">
+        </OBJECT></LI>
+        <UL>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\63a6c84a-78f9-bd66-0962-db254d95660b.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method ()">
+            <param name="Local" value="html\cc8cc740-7ac5-ace4-c9b5-50d07efe3871.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method ()">
+            <param name="Local" value="html\411d42c2-84ea-17a7-3c00-837c6cbb561e.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\10d3f072-df2a-7283-701a-b871af851964.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\69a0f5bd-455f-e93b-0c5f-48a6e8880fae.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method ()">
+            <param name="Local" value="html\2428ba44-ca4f-922c-b2ce-77813bd4e37c.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Method (, CAML.QueryScope)">
+            <param name="Local" value="html\39c19b8f-1fee-c096-8a0d-b8626e6b3563.htm">
+          </OBJECT></LI>
+          <LI><OBJECT type="text/sitemap">
+            <param name="Name" value="Fetch Generic Method">
+            <param name="Local" value="html\772000d0-e0b3-dfb0-1d3a-ea87a62ac50c.htm">
+          </OBJECT></LI>
+        </UL>
+      </UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="ICamlQuery Properties ">
+        <param name="Local" value="html\29fbfe80-ca4c-2338-0964-9f633bdb4cf8.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ListsXml Property ">
+          <param name="Local" value="html\600363a2-3245-d591-c3ce-1478914bcead.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="QueryXml Property ">
+          <param name="Local" value="html\d9309c4f-35c0-6502-66e0-b2629f0cb67e.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ViewFieldsXml Property ">
+          <param name="Local" value="html\14bb84fb-299f-3964-bfb6-702f1c676fa7.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="RawQuerySample Class">
+      <param name="Local" value="html\5ceaaa0e-9c32-9e00-4888-7678d34db1c3.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="RawQuerySample Members">
+        <param name="Local" value="html\f81d6d47-6a45-c365-d385-09bd36d1b751.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="RawQuerySample Constructor ">
+        <param name="Local" value="html\c84492d4-ca96-4f99-8918-d824257e6dd6.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="RawQuerySample Methods ">
+        <param name="Local" value="html\534fcb75-1097-da1f-7022-4b4473b55158.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="GetJobSheets Method ">
+          <param name="Local" value="html\63680844-c0a2-c398-1e93-c2f8d599152e.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+  </UL>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="JohnHolliday.Caml.Net.Samples Namespace">
+    <param name="Local" value="html\65c6438d-ce73-97e3-e507-fc5aa8b64c77.htm">
+  </OBJECT></LI>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="FindEventsByAudience Class">
+      <param name="Local" value="html\54fa7a58-4a82-5808-8226-125c4b9515dc.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="FindEventsByAudience Members">
+        <param name="Local" value="html\adf18fd5-8f4f-cb5b-fa0b-e2f7c0c4cd95.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="FindEventsByAudience Constructor ">
+        <param name="Local" value="html\7ad7b16e-ba58-996c-fdac-12cbbe3260a7.htm">
+      </OBJECT></LI>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="FindEventsByAudience Methods ">
+        <param name="Local" value="html\1a9d2355-09c2-c8e8-5d10-67bc4c6e13f4.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="DataBind Method ">
+          <param name="Local" value="html\e1df3705-c19a-bf92-5e57-cd340c5dd0f0.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Fetch Method ">
+          <param name="Local" value="html\f41d8ed4-f2e4-6b4e-d498-9c25d5a7f2b6.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="Test Method ">
+          <param name="Local" value="html\d1590f80-2ae5-5475-17c9-12d615d5ed86.htm">
+        </OBJECT></LI>
+      </UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="FindEventsByAudience Properties ">
+        <param name="Local" value="html\3cd661a7-dc89-a929-0dc3-07e306e128b9.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="AudienceName Property ">
+          <param name="Local" value="html\de91b26c-a984-c57d-5c2b-05a13d66944c.htm">
+        </OBJECT></LI>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="QueryXml Property ">
+          <param name="Local" value="html\23a9d4b0-f50e-127f-e28d-6a3caacad779.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+  </UL>
+</UL>
+  </BODY>
+</HTML>

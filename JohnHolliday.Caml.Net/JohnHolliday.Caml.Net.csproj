@@ -12,7 +12,7 @@
     <AssemblyName>JohnHolliday.Caml.Net</AssemblyName>
     <ApplicationIcon>Camel.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>JohnHolliday.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\JohnHolliday.snk</AssemblyOriginatorKeyFile>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -62,11 +62,6 @@
     <DocumentationFile>bin\Release\JohnHolliday.Caml.Net.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\SharePoint.15.0.0\lib\Microsoft.SharePoint\Microsoft.SharePoint.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
@@ -74,18 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAML.cs" />
-    <Compile Include="CamlField.cs" />
-    <Compile Include="CamlQuery.cs" />
-    <Compile Include="ICamlField.cs" />
-    <Compile Include="ICamlQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Samples\FindEventsByAudience.cs" />
-    <Compile Include="Samples\RawQuerySample.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Camel.ico" />
@@ -96,8 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="JohnHolliday.Caml.Net.nuspec" />
-    <None Include="JohnHolliday.snk" />
-    <None Include="packages.config" />
+    <None Include="Properties\JohnHolliday.snk" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -117,6 +105,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(SolutionDir)Tools\nuget.exe pack $(ProjectDir)$(ProjectName).nuspec
+copy "$(TargetDir)*.nupkg" "$(SolutionDir)NuGet\"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
