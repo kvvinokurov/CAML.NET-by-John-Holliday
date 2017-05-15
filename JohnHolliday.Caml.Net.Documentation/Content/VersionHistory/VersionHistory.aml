@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<topic id="f234b4e2-9cd3-4a1a-9cc8-97fe94651d6b" revisionNumber="1">
+<topic id="28136057-dd43-45b7-be85-db8587e034df" revisionNumber="1">
 	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<introduction>
 			<para>The topics in this section describe the various changes made to the [TODO: Project Title] over the
@@ -13,7 +13,7 @@ life of the project.</para>
 
 				<list class="bullet">
 					<listItem>
-						<para><link xlink:href="b9ee7ebe-26cf-4898-9140-c55417e142cc" /></para>
+						<para><link xlink:href="55110702-606c-488a-82f8-98e43eb027b3" /></para>
 					</listItem>
 
 					<listItem>
@@ -26,7 +26,7 @@ life of the project.</para>
 		</section>
 
 		<relatedTopics>
-			<link xlink:href="1f211bae-5bce-43ce-a4a0-e1ae26426ca7" />
+			<link xlink:href="e97c05c0-e1f0-49a1-a8e0-fc8e2955d566" />
 		</relatedTopics>
 
 	</developerConceptualDocument>
