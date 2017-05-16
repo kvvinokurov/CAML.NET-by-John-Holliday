@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>JohnHolliday.Caml.Net</id>
+    <version>2.2.1</version>
+    <title>CAML.NET Core</title>
+    <authors>John Holliday and Associates, Inc.</authors>
+    <owners>John Holliday and Associates, Inc.</owners>
+    <licenseUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday/wiki/License</licenseUrl>
+    <projectUrl>https://github.com/kvvinokurov/CAML.NET-by-John-Holliday</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/kvvinokurov/CAML.NET-by-John-Holliday/VS2015/Resources/Camel.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CAML.NET Core</description>
+    <releaseNotes>Add new methods</releaseNotes>
+    <copyright>Copyright © John Holliday and Associates, Inc. 2007</copyright>
+    <tags>CAML SharePoint JohnHolliday</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release-Net3.5\JohnHolliday.Caml.Net.dll" target="lib\net35\JohnHolliday.Caml.Net.dll" />
+    <file src="bin\Release-Net3.5\JohnHolliday.Caml.Net.xml" target="lib\net35\JohnHolliday.Caml.Net.xml" />
+    <file src="bin\Release-Net4.5\JohnHolliday.Caml.Net.dll" target="lib\net45\JohnHolliday.Caml.Net.dll" />
+    <file src="bin\Release-Net4.5\JohnHolliday.Caml.Net.xml" target="lib\net45\JohnHolliday.Caml.Net.xml" />
+  </files>
+</package>
