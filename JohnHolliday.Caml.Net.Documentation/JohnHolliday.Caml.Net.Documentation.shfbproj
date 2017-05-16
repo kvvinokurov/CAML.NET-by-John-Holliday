@@ -31,7 +31,7 @@
       <Argument Key="requestExampleUrl" Value="" />
     </TransformComponentArguments>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\JohnHolliday.Caml.Net.sln" xmlns="" />
+      <DocumentationSource sourceFile="..\JohnHolliday.Caml.Net.sln" xmlns="" configuration="Debug-Net4.5" />
     </DocumentationSources>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <MaximumGroupParts>2</MaximumGroupParts>
@@ -48,9 +48,11 @@
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net4.5|AnyCPU' ">
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Net4.5|AnyCPU' ">
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
   </PropertyGroup>
@@ -97,5 +99,13 @@
     <PostBuildEvent>
     </PostBuildEvent>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-Net3.5' ">
+    <OutputPath>bin\Debug-Net3.5\</OutputPath>
+    <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release-Net3.5' ">
+    <OutputPath>bin\Release-Net3.5\</OutputPath>
+    <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
   </PropertyGroup>
 </Project>

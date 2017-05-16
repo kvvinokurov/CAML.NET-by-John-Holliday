@@ -17,7 +17,9 @@
     <tags>CAML SharePoint JohnHolliday</tags>
   </metadata>
   <files>
-    <file src="bin\Release\JohnHolliday.Caml.Net.dll" target="lib\net45\JohnHolliday.Caml.Net.dll" />
-    <file src="bin\Release\JohnHolliday.Caml.Net.xml" target="lib\net45\JohnHolliday.Caml.Net.xml" />
+    <file src="bin\Release-Net3.5\JohnHolliday.Caml.Net.dll" target="lib\net35\JohnHolliday.Caml.Net.dll" />
+    <file src="bin\Release-Net3.5\JohnHolliday.Caml.Net.xml" target="lib\net35\JohnHolliday.Caml.Net.xml" />
+    <file src="bin\Release-Net4.5\JohnHolliday.Caml.Net.dll" target="lib\net45\JohnHolliday.Caml.Net.dll" />
+    <file src="bin\Release-Net4.5\JohnHolliday.Caml.Net.xml" target="lib\net45\JohnHolliday.Caml.Net.xml" />
   </files>
 </package>

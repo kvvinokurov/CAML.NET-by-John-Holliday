@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug-Net4.5</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JohnHolliday.Caml.Net</RootNamespace>
     <AssemblyName>JohnHolliday.Caml.Net</AssemblyName>
-    <ApplicationIcon>Camel.ico</ApplicationIcon>
+    <ApplicationIcon>Properties\Camel.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Properties\JohnHolliday.snk</AssemblyOriginatorKeyFile>
     <SccProjectName>SAK</SccProjectName>
@@ -40,26 +40,53 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net4.5|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug-Net4.5\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>2</WarningLevel>
-    <DocumentationFile>bin\Debug\JohnHolliday.Caml.Net.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug-Net4.5\JohnHolliday.Caml.Net.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Net4.5|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release-Net4.5\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\Release\JohnHolliday.Caml.Net.XML</DocumentationFile>
+    <DocumentationFile>bin\Release-Net4.5\JohnHolliday.Caml.Net.XML</DocumentationFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Net3.5|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug-Net3.5\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug-Net3.5\JohnHolliday.Caml.Net.XML</DocumentationFile>
+    <WarningLevel>2</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-Net3.5|AnyCPU'">
+    <OutputPath>bin\Release-Net3.5\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release-Net3.5\JohnHolliday.Caml.Net.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -90,14 +117,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Camel.ico" />
-    <Content Include="Documentation\Usage.htm" />
-    <Content Include="Resources\Camel.ico" />
-    <Content Include="Resources\Camel.png" />
-    <Content Include="Resources\camldotnet.gif" />
+    <Content Include="Properties\Camel.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="JohnHolliday.Caml.Net.nuspec" />
+    <None Include="JohnHolliday.Caml.Net.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\JohnHolliday.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -119,8 +144,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(SolutionDir)Tools\nuget.exe pack $(ProjectDir)$(ProjectName).nuspec
-copy "$(TargetDir)*.nupkg" "$(SolutionDir)NuGet\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

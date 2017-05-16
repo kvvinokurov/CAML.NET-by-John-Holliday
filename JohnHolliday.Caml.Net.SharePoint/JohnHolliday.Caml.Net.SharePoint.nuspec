@@ -15,14 +15,14 @@
     <releaseNotes>SharePoint Utilities move from Core package.</releaseNotes>
     <copyright>Copyright © John Holliday and Associates, Inc. 2007</copyright>
     <tags>CAML SharePoint JohnHolliday</tags>
+    <dependencies>
+      <dependency id="JohnHolliday.Caml.Net" version="2.2.0" />
+    </dependencies>
   </metadata>
-  <dependencies>
-    <dependency id="JohnHolliday.Caml.Net.SharePoint" version="2.2.0" />
-  </dependencies>
   <files>
-    <file src="bin\Release\JohnHolliday.Caml.Net.SharePoint.dll"
-          target="lib\net45\JohnHolliday.Caml.Net.SharePoint.dll" />
-    <file src="bin\Release\JohnHolliday.Caml.Net.SharePoint.xml"
-          target="lib\net45\JohnHolliday.Caml.Net.SharePoint.xml" />
+    <file src="bin\Release-Net3.5\JohnHolliday.Caml.Net.SharePoint.dll" target="lib\net35\JohnHolliday.Caml.Net.SharePoint.dll" />
+    <file src="bin\Release-Net3.5\JohnHolliday.Caml.Net.SharePoint.xml" target="lib\net35\JohnHolliday.Caml.Net.SharePoint.xml" />
+    <file src="bin\Release-Net4.5\JohnHolliday.Caml.Net.SharePoint.dll" target="lib\net45\JohnHolliday.Caml.Net.SharePoint.dll" />
+    <file src="bin\Release-Net4.5\JohnHolliday.Caml.Net.SharePoint.xml" target="lib\net45\JohnHolliday.Caml.Net.SharePoint.xml" />
   </files>
 </package>
