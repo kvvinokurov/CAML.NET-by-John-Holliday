@@ -32,7 +32,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.SharePoint;
 
-namespace JohnHolliday.Caml.Net.Samples
+namespace JohnHolliday.Caml.Net
 {
     /// <summary>
     ///     This is a simple query that retrieves all events where the "Audience" field
@@ -70,9 +70,18 @@ namespace JohnHolliday.Caml.Net.Samples
             get
             {
                 // construct the CAML query string
-                return CAML.Where(CAML.And(
-                    CAML.Contains(CAML.FieldRef("Audience"), CAML.Value(AudienceName)),
-                    CAML.Geq(CAML.FieldRef("EventDate"), CAML.Value(DateTime.Today))));
+                return CAML.Where(
+                    CAML.And(
+                        CAML.Contains(
+                            CAML.FieldRef("Audience"),
+                            CAML.Value(AudienceName)
+                        ),
+                        CAML.Geq(
+                            CAML.FieldRef("EventDate"),
+                            CAML.Value(DateTime.Today)
+                        )
+                    )
+                );
             }
             set { base.QueryXml = value; }
         }

@@ -51,10 +51,18 @@ namespace JohnHolliday.Caml.Net
         public static SPListItemCollection GetJobSheets(SPList list)
         {
             // Create a new query object.
-            var query = new SPQuery();
+            var query = new SPQuery
+            {
+                // Assign the query string by using the raw CAML.NET string conversion operators.
+                Query = CAML.Where(
+                    CAML.Eq(
+                        CAML.FieldRef("Document Type"),
+                        CAML.Value("Job Sheet")
+                    )
+                )
+            };
 
             // Assign the query string by using the raw CAML.NET string conversion operators.
-            query.Query = CAML.Where(CAML.Eq(CAML.FieldRef("Document Type"), CAML.Value("Job Sheet")));
 
             // Execute the query to obtain the matching list items.
             return list.GetItems(query);

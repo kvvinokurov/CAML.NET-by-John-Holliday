@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JohnHolliday.Caml.Net.Share
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "JohnHolliday.Caml.Net.Documentation", "JohnHolliday.Caml.Net.Documentation\JohnHolliday.Caml.Net.Documentation.shfbproj", "{2B36CFA1-4BF3-48C2-BB90-4D2ED21AA84D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Key", "Key", "{D8B20887-F0A6-40E9-B625-9DA5BD5E3085}"
+	ProjectSection(SolutionItems) = preProject
+		Key\JohnHolliday.snk = Key\JohnHolliday.snk
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{8E9EE8BC-47A6-4FEC-A0CF-B785D45A0FDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +37,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B36CFA1-4BF3-48C2-BB90-4D2ED21AA84D} = {8E9EE8BC-47A6-4FEC-A0CF-B785D45A0FDC}
 	EndGlobalSection
 	GlobalSection(TextTemplating) = postSolution
 		TextTemplating = 1

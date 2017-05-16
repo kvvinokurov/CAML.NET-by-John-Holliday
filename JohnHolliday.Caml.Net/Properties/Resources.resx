@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="And" xml:space="preserve">
     <value>And</value>
@@ -263,5 +263,47 @@
   </data>
   <data name="ViewFields" xml:space="preserve">
     <value>ViewFields</value>
+  </data>
+  <data name="Ascending" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="ContentTypeId" xml:space="preserve">
+    <value>ContentTypeId</value>
+  </data>
+  <data name="FALSE" xml:space="preserve">
+    <value>FALSE</value>
+  </data>
+  <data name="FieldId" xml:space="preserve">
+    <value>FieldId</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="IncludeTimeValue" xml:space="preserve">
+    <value>IncludeTimeValue</value>
+  </data>
+  <data name="LookupId" xml:space="preserve">
+    <value>LookupId</value>
+  </data>
+  <data name="Nullable" xml:space="preserve">
+    <value>Nullable</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="TodayISO" xml:space="preserve">
+    <value>TodayISO</value>
+  </data>
+  <data name="TRUE" xml:space="preserve">
+    <value>TRUE</value>
+  </data>
+  <data name="Values" xml:space="preserve">
+    <value>Values</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
   </data>
 </root>

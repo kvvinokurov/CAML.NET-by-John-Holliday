@@ -22,7 +22,7 @@ namespace JohnHolliday.Caml.Net.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JohnHolliday.Caml.Net.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,16 +63,25 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to And.
         /// </summary>
-        internal static string And {
+        public static string And {
             get {
                 return ResourceManager.GetString("And", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ascending.
+        /// </summary>
+        public static string Ascending {
+            get {
+                return ResourceManager.GetString("Ascending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AutoHyperLink.
         /// </summary>
-        internal static string AutoHyperLink {
+        public static string AutoHyperLink {
             get {
                 return ResourceManager.GetString("AutoHyperLink", resourceCulture);
             }
@@ -81,7 +90,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to AutoHyperLinkNoEncoding.
         /// </summary>
-        internal static string AutoHyperLinkNoEncoding {
+        public static string AutoHyperLinkNoEncoding {
             get {
                 return ResourceManager.GetString("AutoHyperLinkNoEncoding", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to AutoNewLine.
         /// </summary>
-        internal static string AutoNewLine {
+        public static string AutoNewLine {
             get {
                 return ResourceManager.GetString("AutoNewLine", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to BeginsWith.
         /// </summary>
-        internal static string BeginsWith {
+        public static string BeginsWith {
             get {
                 return ResourceManager.GetString("BeginsWith", resourceCulture);
             }
@@ -108,7 +117,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Boolean.
         /// </summary>
-        internal static string Boolean {
+        public static string Boolean {
             get {
                 return ResourceManager.GetString("Boolean", resourceCulture);
             }
@@ -117,7 +126,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Collapse.
         /// </summary>
-        internal static string Collapse {
+        public static string Collapse {
             get {
                 return ResourceManager.GetString("Collapse", resourceCulture);
             }
@@ -126,16 +135,25 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Contains.
         /// </summary>
-        internal static string Contains {
+        public static string Contains {
             get {
                 return ResourceManager.GetString("Contains", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ContentTypeId.
+        /// </summary>
+        public static string ContentTypeId {
+            get {
+                return ResourceManager.GetString("ContentTypeId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CurrentUserGroups.
         /// </summary>
-        internal static string CurrentUserGroups {
+        public static string CurrentUserGroups {
             get {
                 return ResourceManager.GetString("CurrentUserGroups", resourceCulture);
             }
@@ -144,7 +162,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to DateRangesOverlap.
         /// </summary>
-        internal static string DateRangesOverlap {
+        public static string DateRangesOverlap {
             get {
                 return ResourceManager.GetString("DateRangesOverlap", resourceCulture);
             }
@@ -153,7 +171,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to DateTime.
         /// </summary>
-        internal static string DateTime {
+        public static string DateTime {
             get {
                 return ResourceManager.GetString("DateTime", resourceCulture);
             }
@@ -162,7 +180,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
-        internal static string Default {
+        public static string Default {
             get {
                 return ResourceManager.GetString("Default", resourceCulture);
             }
@@ -171,16 +189,34 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Eq.
         /// </summary>
-        internal static string Eq {
+        public static string Eq {
             get {
                 return ResourceManager.GetString("Eq", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FALSE.
+        /// </summary>
+        public static string FALSE {
+            get {
+                return ResourceManager.GetString("FALSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FieldId.
+        /// </summary>
+        public static string FieldId {
+            get {
+                return ResourceManager.GetString("FieldId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FieldRef.
         /// </summary>
-        internal static string FieldRef {
+        public static string FieldRef {
             get {
                 return ResourceManager.GetString("FieldRef", resourceCulture);
             }
@@ -189,7 +225,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Geq.
         /// </summary>
-        internal static string Geq {
+        public static string Geq {
             get {
                 return ResourceManager.GetString("Geq", resourceCulture);
             }
@@ -198,7 +234,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to GroupBy.
         /// </summary>
-        internal static string GroupBy {
+        public static string GroupBy {
             get {
                 return ResourceManager.GetString("GroupBy", resourceCulture);
             }
@@ -207,7 +243,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Gt.
         /// </summary>
-        internal static string Gt {
+        public static string Gt {
             get {
                 return ResourceManager.GetString("Gt", resourceCulture);
             }
@@ -216,16 +252,43 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to HTMLEncode.
         /// </summary>
-        internal static string HTMLEncode {
+        public static string HTMLEncode {
             get {
                 return ResourceManager.GetString("HTMLEncode", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ID.
+        /// </summary>
+        public static string ID {
+            get {
+                return ResourceManager.GetString("ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In.
+        /// </summary>
+        public static string In {
+            get {
+                return ResourceManager.GetString("In", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IncludeTimeValue.
+        /// </summary>
+        public static string IncludeTimeValue {
+            get {
+                return ResourceManager.GetString("IncludeTimeValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Integer.
         /// </summary>
-        internal static string Integer {
+        public static string Integer {
             get {
                 return ResourceManager.GetString("Integer", resourceCulture);
             }
@@ -234,7 +297,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to IsNotNull.
         /// </summary>
-        internal static string IsNotNull {
+        public static string IsNotNull {
             get {
                 return ResourceManager.GetString("IsNotNull", resourceCulture);
             }
@@ -243,7 +306,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to IsNull.
         /// </summary>
-        internal static string IsNull {
+        public static string IsNull {
             get {
                 return ResourceManager.GetString("IsNull", resourceCulture);
             }
@@ -252,7 +315,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Leq.
         /// </summary>
-        internal static string Leq {
+        public static string Leq {
             get {
                 return ResourceManager.GetString("Leq", resourceCulture);
             }
@@ -261,7 +324,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to List.
         /// </summary>
-        internal static string List {
+        public static string List {
             get {
                 return ResourceManager.GetString("List", resourceCulture);
             }
@@ -270,16 +333,25 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Lists.
         /// </summary>
-        internal static string Lists {
+        public static string Lists {
             get {
                 return ResourceManager.GetString("Lists", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LookupId.
+        /// </summary>
+        public static string LookupId {
+            get {
+                return ResourceManager.GetString("LookupId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lt.
         /// </summary>
-        internal static string Lt {
+        public static string Lt {
             get {
                 return ResourceManager.GetString("Lt", resourceCulture);
             }
@@ -288,7 +360,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Membership.
         /// </summary>
-        internal static string Membership {
+        public static string Membership {
             get {
                 return ResourceManager.GetString("Membership", resourceCulture);
             }
@@ -297,7 +369,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string Name {
+        public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
             }
@@ -306,16 +378,25 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Neq.
         /// </summary>
-        internal static string Neq {
+        public static string Neq {
             get {
                 return ResourceManager.GetString("Neq", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nullable.
+        /// </summary>
+        public static string Nullable {
+            get {
+                return ResourceManager.GetString("Nullable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Or.
         /// </summary>
-        internal static string Or {
+        public static string Or {
             get {
                 return ResourceManager.GetString("Or", resourceCulture);
             }
@@ -324,7 +405,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to OrderBy.
         /// </summary>
-        internal static string OrderBy {
+        public static string OrderBy {
             get {
                 return ResourceManager.GetString("OrderBy", resourceCulture);
             }
@@ -333,7 +414,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to ProjectProperty.
         /// </summary>
-        internal static string ProjectProperty {
+        public static string ProjectProperty {
             get {
                 return ResourceManager.GetString("ProjectProperty", resourceCulture);
             }
@@ -342,7 +423,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Query.
         /// </summary>
-        internal static string Query {
+        public static string Query {
             get {
                 return ResourceManager.GetString("Query", resourceCulture);
             }
@@ -351,7 +432,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Scope.
         /// </summary>
-        internal static string Scope {
+        public static string Scope {
             get {
                 return ResourceManager.GetString("Scope", resourceCulture);
             }
@@ -360,7 +441,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Select.
         /// </summary>
-        internal static string Select {
+        public static string Select {
             get {
                 return ResourceManager.GetString("Select", resourceCulture);
             }
@@ -369,7 +450,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to SPGroup.
         /// </summary>
-        internal static string SPGroup {
+        public static string SPGroup {
             get {
                 return ResourceManager.GetString("SPGroup", resourceCulture);
             }
@@ -378,7 +459,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to SPWeb.AllUsers.
         /// </summary>
-        internal static string SPWebAllUsers {
+        public static string SPWebAllUsers {
             get {
                 return ResourceManager.GetString("SPWebAllUsers", resourceCulture);
             }
@@ -387,7 +468,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to SPWeb.Groups.
         /// </summary>
-        internal static string SPWebGroups {
+        public static string SPWebGroups {
             get {
                 return ResourceManager.GetString("SPWebGroups", resourceCulture);
             }
@@ -396,7 +477,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to SPWeb.Users.
         /// </summary>
-        internal static string SPWebUsers {
+        public static string SPWebUsers {
             get {
                 return ResourceManager.GetString("SPWebUsers", resourceCulture);
             }
@@ -405,7 +486,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to StripWS.
         /// </summary>
-        internal static string StripWS {
+        public static string StripWS {
             get {
                 return ResourceManager.GetString("StripWS", resourceCulture);
             }
@@ -414,16 +495,43 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Text.
         /// </summary>
-        internal static string Text {
+        public static string Text {
             get {
                 return ResourceManager.GetString("Text", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        public static string Today {
+            get {
+                return ResourceManager.GetString("Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TodayISO.
+        /// </summary>
+        public static string TodayISO {
+            get {
+                return ResourceManager.GetString("TodayISO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TRUE.
+        /// </summary>
+        public static string TRUE {
+            get {
+                return ResourceManager.GetString("TRUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
-        internal static string Type {
+        public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
             }
@@ -432,7 +540,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to URLEncode.
         /// </summary>
-        internal static string URLEncode {
+        public static string URLEncode {
             get {
                 return ResourceManager.GetString("URLEncode", resourceCulture);
             }
@@ -441,7 +549,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to URLEncodeAsURL.
         /// </summary>
-        internal static string URLEncodeAsURL {
+        public static string URLEncodeAsURL {
             get {
                 return ResourceManager.GetString("URLEncodeAsURL", resourceCulture);
             }
@@ -450,16 +558,34 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Value.
         /// </summary>
-        internal static string Value {
+        public static string Value {
             get {
                 return ResourceManager.GetString("Value", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Values.
+        /// </summary>
+        public static string Values {
+            get {
+                return ResourceManager.GetString("Values", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        public static string View {
+            get {
+                return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ViewFields.
         /// </summary>
-        internal static string ViewFields {
+        public static string ViewFields {
             get {
                 return ResourceManager.GetString("ViewFields", resourceCulture);
             }
@@ -468,7 +594,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Webs.
         /// </summary>
-        internal static string Webs {
+        public static string Webs {
             get {
                 return ResourceManager.GetString("Webs", resourceCulture);
             }
@@ -477,7 +603,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Where.
         /// </summary>
-        internal static string Where {
+        public static string Where {
             get {
                 return ResourceManager.GetString("Where", resourceCulture);
             }
@@ -486,7 +612,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to WithIndex.
         /// </summary>
-        internal static string WithIndex {
+        public static string WithIndex {
             get {
                 return ResourceManager.GetString("WithIndex", resourceCulture);
             }
@@ -495,7 +621,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         /// <summary>
         ///   Looks up a localized string similar to XML.
         /// </summary>
-        internal static string XML {
+        public static string XML {
             get {
                 return ResourceManager.GetString("XML", resourceCulture);
             }

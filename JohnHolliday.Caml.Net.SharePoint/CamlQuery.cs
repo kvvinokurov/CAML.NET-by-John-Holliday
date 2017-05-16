@@ -31,6 +31,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -268,13 +269,13 @@ namespace JohnHolliday.Caml.Net
                     }
                     catch (Exception x)
                     {
-                        var s = x.Message;
+                        Debug.WriteLine(x.Message);
                     }
                 }
             }
             catch (Exception x)
             {
-                var s = x.Message;
+                Debug.WriteLine(x.Message);
             }
             return items;
         }
@@ -327,7 +328,7 @@ namespace JohnHolliday.Caml.Net
         public IList<T> Fetch<T>(SPSite site) where T : new()
         {
             IList<T> result = new List<T>();
-            var flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+            const BindingFlags flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
             foreach (var item in Fetch(site))
             {
                 var t = new T();
@@ -357,7 +358,7 @@ namespace JohnHolliday.Caml.Net
         public IList<T> Fetch<T>(SPList list) where T : new()
         {
             IList<T> result = new List<T>();
-            var flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+            const BindingFlags flags = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
             foreach (var item in Fetch(list))
             {
                 var t = new T();
@@ -380,10 +381,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns></returns>
         private bool IsBindableColumn(DataColumn col)
         {
-            if (col.ColumnName.Equals("ListId") ||
-                col.ColumnName.Equals("WebId"))
-                return false;
-            return true;
+            return !col.ColumnName.Equals("ListId") && !col.ColumnName.Equals("WebId");
         }
 
         /// <summary>
@@ -410,7 +408,9 @@ namespace JohnHolliday.Caml.Net
                         .Select(column => new BoundField
                         {
                             DataField = column.ColumnName,
-                            HeaderText = string.IsNullOrEmpty(column.Caption) ? column.ColumnName : column.Caption
+                            HeaderText = string.IsNullOrEmpty(column.Caption)
+                                ? column.ColumnName
+                                : column.Caption
                         }))
                 {
                     gridView.Columns.Add(col);

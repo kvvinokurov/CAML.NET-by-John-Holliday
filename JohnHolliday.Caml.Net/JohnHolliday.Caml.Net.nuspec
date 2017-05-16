@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>JohnHolliday.Caml.Net</id>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     <title>CAML.NET Core</title>
     <authors>John Holliday and Associates, Inc.</authors>
     <owners>John Holliday and Associates, Inc.</owners>
@@ -12,7 +12,7 @@
     <iconUrl>https://raw.githubusercontent.com/kvvinokurov/CAML.NET-by-John-Holliday/VS2015/JohnHolliday.Caml.Net/Camel.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CAML.NET Core</description>
-    <releaseNotes>SharePoint extensions move to another package - JohnHolliday.Caml.Net.SharePoint.</releaseNotes>
+    <releaseNotes>Add new methods</releaseNotes>
     <copyright>Copyright © John Holliday and Associates, Inc. 2007</copyright>
     <tags>CAML SharePoint JohnHolliday</tags>
   </metadata>
