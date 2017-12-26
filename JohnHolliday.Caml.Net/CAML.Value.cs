@@ -78,6 +78,15 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
+        ///     Specifies a DateTime Today value with OffsetDays
+        /// </summary>
+        /// <returns>a new CAML Value element</returns>
+        public static string ValueToday(int offsetDays)
+        {
+            return Value(Resources.DateTime, Tag(Resources.Today, Resources.OffsetDays, offsetDays.ToString(), null));
+        }
+
+        /// <summary>
         ///     Specifies a DateTime TodayISO value
         /// </summary>
         /// <returns>a new CAML Value element</returns>
