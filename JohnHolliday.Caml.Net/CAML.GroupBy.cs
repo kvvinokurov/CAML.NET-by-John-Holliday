@@ -1,4 +1,5 @@
-using JohnHolliday.Caml.Net.Properties;
+using System.Xml.Linq;
+using JetBrains.Annotations;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -9,7 +10,7 @@ namespace JohnHolliday.Caml.Net
         /// </summary>
         /// <param name="fieldRefElement">a CAML FieldRef element</param>
         /// <returns>a new CAML GroupBy element</returns>
-        public static string GroupBy(string fieldRefElement)
+        public static string GroupBy([NotNull] string fieldRefElement)
         {
             return GroupBy(fieldRefElement, false);
         }
@@ -20,9 +21,12 @@ namespace JohnHolliday.Caml.Net
         /// <param name="fieldRefElement">a CAML FieldRef element</param>
         /// <param name="bCollapse">whether to collapse the group</param>
         /// <returns>a new CAML GroupBy element</returns>
-        public static string GroupBy(string fieldRefElement, bool bCollapse)
+        public static string GroupBy([NotNull] string fieldRefElement, bool bCollapse)
         {
-            return Tag(Resources.GroupBy, Resources.Collapse, BoolToString(bCollapse), fieldRefElement);
+            return Base.Tag(
+                    Resources.Resources.GroupBy, fieldRefElement,
+                    new XAttribute(Resources.Resources.Collapse, BoolToString(bCollapse)))
+                .ToStringBySettings();
         }
     }
 }

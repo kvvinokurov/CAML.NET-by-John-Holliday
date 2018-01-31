@@ -1,5 +1,5 @@
 using System.Linq;
-using JohnHolliday.Caml.Net.Properties;
+using JetBrains.Annotations;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -10,9 +10,9 @@ namespace JohnHolliday.Caml.Net
         /// </summary>
         /// <param name="fieldRefElements">a CAML string containing a list of CAML FieldRef elements</param>
         /// <returns>a new CAML OrderBy element</returns>
-        public static string OrderBy(string fieldRefElements)
+        public static string OrderBy([NotNull] string fieldRefElements)
         {
-            return Tag(Resources.OrderBy, fieldRefElements);
+            return Tag(Resources.Resources.OrderBy, fieldRefElements);
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace JohnHolliday.Caml.Net
         public static string OrderBy(params string[] args)
         {
             var fieldRefElements = args.Aggregate(string.Empty, (current, o) => current + o.ToString());
-            return Tag(Resources.OrderBy, fieldRefElements);
+            return Tag(Resources.Resources.OrderBy, fieldRefElements);
         }
     }
 }

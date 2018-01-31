@@ -1,4 +1,4 @@
-using JohnHolliday.Caml.Net.Properties;
+using System.Xml.Linq;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -24,7 +24,7 @@ namespace JohnHolliday.Caml.Net
         {
             var attributeValueOfMembershipType = GetMembershipNameByType(type);
 
-            return Tag(Resources.Membership, Resources.Type, attributeValueOfMembershipType, value);
+            return Base.Tag(Resources.Resources.Membership, value, new XAttribute(Resources.Resources.Type, attributeValueOfMembershipType)).ToStringBySettings();
         }
 
         /// <summary>
@@ -38,15 +38,15 @@ namespace JohnHolliday.Caml.Net
             switch (type)
             {
                 case MembershipType.SPWebAllUsers:
-                    return Resources.SPWebAllUsers;
+                    return Resources.Resources.SPWebAllUsers;
                 case MembershipType.SPWebGroups:
-                    return Resources.SPWebGroups;
+                    return Resources.Resources.SPWebGroups;
                 case MembershipType.SPWebUsers:
-                    return Resources.SPWebUsers;
+                    return Resources.Resources.SPWebUsers;
                 case MembershipType.SPGroup:
-                    return Resources.SPGroup;
+                    return Resources.Resources.SPGroup;
                 default:
-                    return Resources.CurrentUserGroups;
+                    return Resources.Resources.CurrentUserGroups;
             }
         }
     }

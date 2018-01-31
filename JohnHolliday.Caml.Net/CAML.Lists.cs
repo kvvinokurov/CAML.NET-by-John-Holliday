@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Xml.Linq;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -166,7 +167,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Lists element</returns>
         public static string ListsWithServerTemplate(int serverTemplate)
         {
-            return Lists(null, null as string, serverTemplate.ToString(), null);
+            return Lists(null, (string)null, serverTemplate.ToString(), null);
         }
 
         /// <summary>
@@ -179,7 +180,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Lists element</returns>
         public static string Lists(BaseType baseType)
         {
-            return Lists(baseType, null as string, null, null);
+            return Lists(baseType, (string)null, null, null);
         }
 
         /// <summary>
@@ -200,26 +201,21 @@ namespace JohnHolliday.Caml.Net
         public static string Lists(BaseType? baseType, string listElements, string serverTemplate,
             bool? includeHiddenLists, int maxListLimit = 0)
         {
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append("<Lists");
+            var attributes = new List<XAttribute>
+            {
+                new XAttribute(Resources.Resources.MaxListLimit, maxListLimit)
+            };
 
             if (baseType.HasValue)
-                stringBuilder.AppendFormat(" BaseType=\"{0}\"", (int) baseType);
+                attributes.Add(new XAttribute(Resources.Resources.BaseType, (int) baseType));
 
             if (!string.IsNullOrEmpty(serverTemplate))
-                stringBuilder.AppendFormat(" ServerTemplate=\"{0}\"", serverTemplate);
+                attributes.Add(new XAttribute(Resources.Resources.ServerTemplate, serverTemplate));
 
             if (includeHiddenLists.HasValue)
-                stringBuilder.AppendFormat(" Hidden=\"{0}\"", BoolToString(includeHiddenLists.Value));
+                attributes.Add(new XAttribute(Resources.Resources.Hidden, BoolToString(includeHiddenLists.Value)));
 
-            stringBuilder.AppendFormat(" MaxListLimit=\"{0}\"", maxListLimit);
-
-            if (!string.IsNullOrEmpty(listElements))
-                stringBuilder.AppendFormat(">{0}</Lists>", listElements);
-            else
-                stringBuilder.AppendFormat("/>");
-
-            return stringBuilder.ToString();
+            return Base.Tag(Resources.Resources.Lists, listElements, attributes.ToArray()).ToStringBySettings();
         }
     }
 }

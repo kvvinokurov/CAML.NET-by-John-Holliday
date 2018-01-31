@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -17,6 +18,8 @@ using System.Runtime.InteropServices;
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
+
+[assembly: InternalsVisibleTo("JohnHolliday.Caml.Net.Tests, JohnHolliday.Caml.Net.Tests, Version=2.2.0.0, Culture=neutral, PublicKeyToken=1a6e75059df6ca83")]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("f843f4d2-3cf3-40c5-8e67-88729d8eebe1")]

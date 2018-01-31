@@ -1,4 +1,4 @@
-using JohnHolliday.Caml.Net.Properties;
+using System.Xml.Linq;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -11,7 +11,8 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML ProjectProperty element</returns>
         public static string ProjectProperty(string propertyName)
         {
-            return Tag(Resources.ProjectProperty, Resources.Select, propertyName, null);
+            return Base.Tag(Resources.Resources.ProjectProperty,
+                new XAttribute(Resources.Resources.Select, propertyName)).ToStringBySettings();
         }
 
         /// <summary>
@@ -22,9 +23,13 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML ProjectProperty element</returns>
         public static string ProjectProperty(string propertyName, string defaultValue)
         {
-            return Tag(Resources.ProjectProperty, null, 
-                Resources.Select, propertyName, 
-                Resources.Default, defaultValue);
+            var attributes = new[]
+            {
+                new XAttribute(Resources.Resources.Select, propertyName),
+                new XAttribute(Resources.Resources.Default, defaultValue)
+            };
+
+            return Base.Tag(Resources.Resources.ProjectProperty, attributes).ToStringBySettings();
         }
 
         /// <summary>
@@ -51,25 +56,38 @@ namespace JohnHolliday.Caml.Net
         /// </param>
         /// <param name="urlEncodingType">specifies how to handle URL encoding <see cref="CAML.UrlEncodingType" /></param>
         /// <returns></returns>
-        public static string ProjectProperty(string propertyName, string defaultValue,
-            AutoHyperlinkType autoHyperlinkType, bool autoNewLine, bool expandXML, bool htmlEncode,
-            bool stripWhiteSpace, UrlEncodingType urlEncodingType)
+        public static string ProjectProperty(
+            string propertyName,
+            string defaultValue,
+            AutoHyperlinkType autoHyperlinkType,
+            bool autoNewLine,
+            bool expandXML,
+            bool htmlEncode,
+            bool stripWhiteSpace,
+            UrlEncodingType urlEncodingType)
         {
-            return Tag(Resources.ProjectProperty, null, 
-                Resources.Select, propertyName, 
-                Resources.Default, defaultValue,
-                autoHyperlinkType == AutoHyperlinkType.Plain
-                    ? Resources.AutoHyperLinkNoEncoding
-                    : Resources.AutoHyperLink,
-                BoolToString(autoHyperlinkType == AutoHyperlinkType.None),
-                Resources.AutoNewLine, BoolToString(autoNewLine),
-                Resources.HTMLEncode, BoolToString(htmlEncode),
-                Resources.StripWS, BoolToString(stripWhiteSpace),
-                urlEncodingType == UrlEncodingType.EncodeAsUrl
-                    ? Resources.URLEncodeAsURL
-                    : Resources.URLEncode,
-                BoolToString(urlEncodingType != UrlEncodingType.None)
-            );
+            var attributes = new[]
+            {
+                new XAttribute(Resources.Resources.Select, propertyName),
+                new XAttribute(Resources.Resources.Default, defaultValue),
+                new XAttribute(
+                    autoHyperlinkType == AutoHyperlinkType.Plain
+                        ? Resources.Resources.AutoHyperLinkNoEncoding
+                        : Resources.Resources.AutoHyperLink,
+                    BoolToString(autoHyperlinkType == AutoHyperlinkType.None)
+                ),
+                new XAttribute(Resources.Resources.AutoNewLine, BoolToString(autoNewLine)),
+                new XAttribute(Resources.Resources.HTMLEncode, BoolToString(htmlEncode)),
+                new XAttribute(Resources.Resources.StripWS, BoolToString(stripWhiteSpace)),
+                new XAttribute(
+                    urlEncodingType == UrlEncodingType.EncodeAsUrl
+                        ? Resources.Resources.URLEncodeAsURL
+                        : Resources.Resources.URLEncode,
+                    BoolToString(urlEncodingType != UrlEncodingType.None)
+                )
+            };
+
+            return Base.Tag(Resources.Resources.ProjectProperty, attributes).ToStringBySettings();
         }
     }
 }

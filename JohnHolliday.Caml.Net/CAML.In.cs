@@ -1,5 +1,5 @@
 using System.Linq;
-using JohnHolliday.Caml.Net.Properties;
+using JetBrains.Annotations;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -16,7 +16,7 @@ namespace JohnHolliday.Caml.Net
         ///     Т.к. CAML выражение типа In имеет ограничение на кол-во значений, то в случае превышения парогового кол-ва
         ///     значений оно делится на несколько выражений и объединяется выражением Or.
         /// </remarks>
-        public static string In(string fieldRefElement, string[] valueElements)
+        public static string In([NotNull] string fieldRefElement, string[] valueElements)
         {
             if (valueElements.Length <= Constants.InChunkSize)
                 return In(fieldRefElement, Values(valueElements));
@@ -34,9 +34,9 @@ namespace JohnHolliday.Caml.Net
         /// <param name="fieldRefElement">a CAML FieldRef element</param>
         /// <param name="valuesElement">a CAML Value element</param>
         /// <returns>a new CAML In element</returns>
-        protected static string In(string fieldRefElement, string valuesElement)
+        protected static string In([NotNull] string fieldRefElement, string valuesElement)
         {
-            return Tag(Resources.In, string.Concat(fieldRefElement, valuesElement));
+            return Tag(Resources.Resources.In, string.Concat(fieldRefElement, valuesElement));
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Values element</returns>
         protected static string Values(string[] valueElements)
         {
-            return Tag(Resources.Values, valueElements.Aggregate(string.Concat));
+            return Tag(Resources.Resources.Values, valueElements.Aggregate(string.Concat));
         }
     }
 }

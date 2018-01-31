@@ -309,4 +309,16 @@
   <data name="OffsetDays" xml:space="preserve">
     <value>OffsetDays</value>
   </data>
+  <data name="BaseType" xml:space="preserve">
+    <value>BaseType</value>
+  </data>
+  <data name="Hidden" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="MaxListLimit" xml:space="preserve">
+    <value>MaxListLimit</value>
+  </data>
+  <data name="ServerTemplate" xml:space="preserve">
+    <value>ServerTemplate</value>
+  </data>
 </root>

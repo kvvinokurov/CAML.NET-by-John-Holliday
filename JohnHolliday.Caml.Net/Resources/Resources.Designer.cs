@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JohnHolliday.Caml.Net.Properties {
+namespace JohnHolliday.Caml.Net.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace JohnHolliday.Caml.Net.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JohnHolliday.Caml.Net.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JohnHolliday.Caml.Net.Resources.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -102,6 +102,15 @@ namespace JohnHolliday.Caml.Net.Properties {
         public static string AutoNewLine {
             get {
                 return ResourceManager.GetString("AutoNewLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BaseType.
+        /// </summary>
+        public static string BaseType {
+            get {
+                return ResourceManager.GetString("BaseType", resourceCulture);
             }
         }
         
@@ -250,6 +259,15 @@ namespace JohnHolliday.Caml.Net.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hidden.
+        /// </summary>
+        public static string Hidden {
+            get {
+                return ResourceManager.GetString("Hidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to HTMLEncode.
         /// </summary>
         public static string HTMLEncode {
@@ -358,6 +376,15 @@ namespace JohnHolliday.Caml.Net.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MaxListLimit.
+        /// </summary>
+        public static string MaxListLimit {
+            get {
+                return ResourceManager.GetString("MaxListLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Membership.
         /// </summary>
         public static string Membership {
@@ -453,6 +480,15 @@ namespace JohnHolliday.Caml.Net.Properties {
         public static string Select {
             get {
                 return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ServerTemplate.
+        /// </summary>
+        public static string ServerTemplate {
+            get {
+                return ResourceManager.GetString("ServerTemplate", resourceCulture);
             }
         }
         

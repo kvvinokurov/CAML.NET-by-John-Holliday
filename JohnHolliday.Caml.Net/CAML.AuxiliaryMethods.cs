@@ -1,5 +1,3 @@
-using JohnHolliday.Caml.Net.Properties;
-
 namespace JohnHolliday.Caml.Net
 {
     public partial class CAML
@@ -11,7 +9,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>Bool as CAML string value - TRUE / FALSE</returns>
         public static string BoolToString(bool boolValue)
         {
-            return boolValue ? Resources.TRUE : Resources.FALSE;
+            return boolValue ? Resources.Resources.TRUE : Resources.Resources.FALSE;
         }
 
         /// <summary>

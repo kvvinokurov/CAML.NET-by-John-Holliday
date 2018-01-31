@@ -2,8 +2,7 @@
 
 namespace JohnHolliday.Caml.Net
 {
-    /// <summary>
-    /// </summary>
+    /// <inheritdoc />
     public class CAMLExtendet : CAML
     {
         /// <summary>

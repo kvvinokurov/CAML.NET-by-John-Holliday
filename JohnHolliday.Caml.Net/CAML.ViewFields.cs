@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using JohnHolliday.Caml.Net.Properties;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -13,7 +12,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML ViewFields element</returns>
         public static string ViewFieldsByFieldNames(params string[] fieldNames)
         {
-            return ViewFields(fieldNames.Select(FieldRef).ToArray());
+            return Base.ViewFields(fieldNames.Select(Base.FieldRef).ToArray()).ToStringBySettings();
         }
 
         /// <summary>
@@ -23,7 +22,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>Оформленная коллекция полей</returns>
         public static string ViewFields(params Guid[] fieldIds)
         {
-            return ViewFields(fieldIds.Select(FieldRef).ToArray());
+            return Base.ViewFields(fieldIds.Select(Base.FieldRef).ToArray()).ToStringBySettings();
         }
 
         /// <summary>
@@ -34,7 +33,7 @@ namespace JohnHolliday.Caml.Net
         public static string ViewFields(params string[] fieldRefs)
         {
             var fieldRefElements = fieldRefs.Aggregate(string.Empty, (current, field) => current + field);
-            return Tag(Resources.ViewFields, fieldRefElements);
+            return Tag(Resources.Resources.ViewFields, fieldRefElements);
         }
     }
 }

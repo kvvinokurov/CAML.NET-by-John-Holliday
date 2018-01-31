@@ -1,5 +1,6 @@
 using System;
-using JohnHolliday.Caml.Net.Properties;
+using System.Xml.Linq;
+using JetBrains.Annotations;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -12,7 +13,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string Value(string fieldValue)
         {
-            return Value(Resources.Text, fieldValue);
+            return Value(Resources.Resources.Text, fieldValue);
         }
 
         /// <summary>
@@ -22,7 +23,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string Value(int fieldValue)
         {
-            return Value(Resources.Integer, fieldValue.ToString());
+            return Value(Resources.Resources.Integer, fieldValue.ToString());
         }
 
         /// <summary>
@@ -35,7 +36,8 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string Value(bool fieldValue)
         {
-            return Value(Resources.Boolean, fieldValue ? "1" : "0");
+            return Value(Resources.Resources.Boolean, fieldValue ? "1" : "0");
+            //return Value(Resources.Boolean, BoolToString(fieldValue));
             //return Tag(Resources.Value, Resources.Type, Resources.Boolean, fieldValue.ToString());
         }
 
@@ -51,7 +53,7 @@ namespace JohnHolliday.Caml.Net
         public static string Value(DateTime fieldValue)
         {
             //return Tag(Resources.Value, Resources.Type, Resources.DateTime, fieldValue.ToString());
-            return Value(Resources.DateTime,
+            return Value(Resources.Resources.DateTime,
                 fieldValue.CreateISO8601DateTimeFromSystemDateTime());
         }
 
@@ -63,9 +65,15 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string Value(DateTime fieldValue, bool includeTimeValue)
         {
-            return Tag(Resources.Value, fieldValue.CreateISO8601DateTimeFromSystemDateTime(),
-                Resources.Type, Resources.DateTime,
-                Resources.IncludeTimeValue, BoolToString(includeTimeValue));
+            var attributes = new[]
+            {
+                new XAttribute(Resources.Resources.Type, Resources.Resources.DateTime),
+                new XAttribute(Resources.Resources.IncludeTimeValue, BoolToString(includeTimeValue))
+            };
+
+            return Base.Tag(Resources.Resources.Value, fieldValue.CreateISO8601DateTimeFromSystemDateTime(),
+                    attributes)
+                .ToStringBySettings();
         }
 
         /// <summary>
@@ -74,7 +82,8 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string ValueToday()
         {
-            return Value(Resources.DateTime, Tag(Resources.Today, null));
+            return Base.Value(Resources.Resources.DateTime, Base.Tag(Resources.Resources.Today))
+                .ToStringBySettings();
         }
 
         /// <summary>
@@ -83,7 +92,11 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string ValueToday(int offsetDays)
         {
-            return Value(Resources.DateTime, Tag(Resources.Today, Resources.OffsetDays, offsetDays.ToString(), null));
+            return Base.Value(
+                Resources.Resources.DateTime,
+                Base.Tag(Resources.Resources.Today,
+                    new XAttribute(Resources.Resources.OffsetDays, offsetDays.ToString()))
+            ).ToStringBySettings();
         }
 
         /// <summary>
@@ -92,9 +105,9 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string ValueTodayISO()
         {
-            return Value(Resources.DateTime, Tag(Resources.TodayISO, null));
+            return Base.Value(Resources.Resources.DateTime, Base.Tag(Resources.Resources.TodayISO))
+                .ToStringBySettings();
         }
-
 
         /// <summary>
         ///     Specifies a ContentTypeId value
@@ -103,7 +116,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Value element</returns>
         public static string ValueForContentTypeIdAsString(string contentTypeId)
         {
-            return Value(Resources.ContentTypeId, contentTypeId);
+            return Value(Resources.Resources.ContentTypeId, contentTypeId);
         }
 
         /// <summary>
@@ -112,9 +125,11 @@ namespace JohnHolliday.Caml.Net
         /// <param name="valueType">a string describing the data type</param>
         /// <param name="fieldValue">the value formatted as a string</param>
         /// <returns>a new CAML Value element</returns>
-        public static string Value(string valueType, string fieldValue)
+        public static string Value([NotNull] string valueType, string fieldValue)
         {
-            return Tag(Resources.Value, Resources.Type, valueType, fieldValue);
+            return Base.Tag(Resources.Resources.Value, fieldValue,
+                    new XAttribute(Resources.Resources.Type, valueType))
+                .ToStringBySettings();
         }
     }
 }

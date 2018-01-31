@@ -1,5 +1,7 @@
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Xml.Linq;
+using JetBrains.Annotations;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -9,11 +11,21 @@ namespace JohnHolliday.Caml.Net
         ///     Builds an XML string without attributes and attribute values.
         /// </summary>
         /// <param name="tag">the XML element tag</param>
+        /// <returns>an XML string resulting from the combined parameters</returns>
+        public static string Tag([NotNull] string tag)
+        {
+            return Base.Tag(tag).ToStringBySettings();
+        }
+
+        /// <summary>
+        ///     Builds an XML string without attributes and attribute values.
+        /// </summary>
+        /// <param name="tag">the XML element tag</param>
         /// <param name="value">the element value (can be null)</param>
         /// <returns>an XML string resulting from the combined parameters</returns>
-        public static string Tag(string tag, string value)
+        public static string Tag([NotNull] string tag, string value)
         {
-            return Tag(tag, null, null, value);
+            return Base.Tag(tag, value, null).ToStringBySettings();
         }
 
         /// <summary>
@@ -24,15 +36,13 @@ namespace JohnHolliday.Caml.Net
         /// <param name="attributeValue">the attribute value (can be null)</param>
         /// <param name="value">the element value (can be null)</param>
         /// <returns>an XML string resulting from the combined parameters</returns>
-        public static string Tag(string tag, string attribute, string attributeValue, string value)
+        public static string Tag([NotNull] string tag, string attribute, string attributeValue, string value)
         {
-            return string.IsNullOrEmpty(attribute) || string.IsNullOrEmpty(attributeValue)
-                ? (string.IsNullOrEmpty(value)
-                    ? string.Format("<{0} />", tag)
-                    : string.Format("<{0}>{1}</{0}>", tag, value))
-                : (string.IsNullOrEmpty(value)
-                    ? string.Format("<{0} {1}=\"{2}\" />", tag, attribute, attributeValue)
-                    : string.Format("<{0} {1}=\"{2}\">{3}</{0}>", tag, attribute, attributeValue, value));
+            var attributeElement = !string.IsNullOrEmpty(attribute) && !string.IsNullOrEmpty(attributeValue)
+                ? new XAttribute(attribute, attributeValue)
+                : null;
+
+            return Base.Tag(tag, value, attributeElement).ToStringBySettings();
         }
 
         /// <summary>
@@ -42,17 +52,19 @@ namespace JohnHolliday.Caml.Net
         /// <param name="value">the element value</param>
         /// <param name="attributeValuePairs">an array of attribute value pairs</param>
         /// <returns>an XML string resulting from the combined parameters</returns>
-        public static string Tag(string tag, string value, params string[] attributeValuePairs)
+        public static string Tag([NotNull] string tag, string value, params string[] attributeValuePairs)
         {
-            var builder = new StringBuilder("<");
-            builder.Append(tag);
-            for (var i = 0; i < attributeValuePairs.Length - 1; i += 2)
-                builder.AppendFormat(" {0}=\"{1}\"", attributeValuePairs[i], attributeValuePairs[i + 1]);
-            if (string.IsNullOrEmpty(value))
-                builder.Append(" />");
-            else
-                builder.AppendFormat(">{0}</{1}>", value, tag);
-            return builder.ToString();
+            var attributes = new List<XAttribute>();
+            if (attributeValuePairs != null && attributeValuePairs.Length % 2 == 0)
+                for (var i = 1; i < attributeValuePairs.Length; i++)
+                {
+                    var attributeName = attributeValuePairs[i - 1];
+                    var attributeValue = attributeValuePairs[i];
+                    var attribute = new XAttribute(attributeName, attributeValue);
+                    attributes.Add(attribute);
+                }
+
+            return Base.Tag(tag, value, attributes.ToArray()).ToStringBySettings();
         }
 
         /// <summary>
@@ -62,17 +74,13 @@ namespace JohnHolliday.Caml.Net
         /// <param name="value">the element value</param>
         /// <param name="attributeValuePairs">an dictionary of attribute value pairs</param>
         /// <returns>an XML string resulting from the combined parameters</returns>
-        public static string Tag(string tag, string value, Dictionary<string, string> attributeValuePairs)
+        public static string Tag([NotNull] string tag, string value, Dictionary<string, string> attributeValuePairs)
         {
-            var builder = new StringBuilder("<");
-            builder.Append(tag);
-            foreach (var attributeValuePair in attributeValuePairs)
-                builder.AppendFormat(" {0}=\"{1}\"", attributeValuePair.Key, attributeValuePair.Value);
-            if (string.IsNullOrEmpty(value))
-                builder.Append(" />");
-            else
-                builder.AppendFormat(">{0}</{1}>", value, tag);
-            return builder.ToString();
+            var attributes = attributeValuePairs != null && attributeValuePairs.Any()
+                ? attributeValuePairs.Select(x => new XAttribute(x.Key, x.Value)).ToArray()
+                : null;
+
+            return Base.Tag(tag, value, attributes).ToStringBySettings();
         }
     }
 }

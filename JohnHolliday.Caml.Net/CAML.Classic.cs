@@ -1,5 +1,5 @@
 using System;
-using JohnHolliday.Caml.Net.Properties;
+using System.Xml.Linq;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -13,7 +13,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML And element</returns>
         public static string And(string leftPart, string rightPart)
         {
-            return Tag(Resources.And, leftPart + rightPart);
+            return Tag(Resources.Resources.And, leftPart + rightPart);
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML BeginsWith element</returns>
         public static string BeginsWith(string fieldRefElement, string valueElement)
         {
-            return Tag(Resources.BeginsWith, fieldRefElement + valueElement);
+            return Tag(Resources.Resources.BeginsWith, fieldRefElement + valueElement);
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Contains element</returns>
         public static string Contains(string fieldRefElement, string valueElement)
         {
-            return Tag(Resources.Contains, fieldRefElement + valueElement);
+            return Tag(Resources.Resources.Contains, fieldRefElement + valueElement);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML EQ element</returns>
         public static string Eq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Eq, leftPart + rightPart);
+            return Tag(Resources.Resources.Eq, leftPart + rightPart);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML GEQ element</returns>
         public static string Geq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Geq, leftPart + rightPart);
+            return Tag(Resources.Resources.Geq, leftPart + rightPart);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML GT element</returns>
         public static string Gt(string leftPart, string rightPart)
         {
-            return Tag(Resources.Gt, leftPart + rightPart);
+            return Tag(Resources.Resources.Gt, leftPart + rightPart);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML IsNotNull element</returns>
         public static string IsNotNull(string fieldRefElement)
         {
-            return Tag(Resources.IsNotNull, fieldRefElement);
+            return Tag(Resources.Resources.IsNotNull, fieldRefElement);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML IsNull element</returns>
         public static string IsNull(string fieldRefElement)
         {
-            return Tag(Resources.IsNull, fieldRefElement);
+            return Tag(Resources.Resources.IsNull, fieldRefElement);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML LEQ element</returns>
         public static string Leq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Leq, leftPart + rightPart);
+            return Tag(Resources.Resources.Leq, leftPart + rightPart);
         }
 
         /// <summary>
@@ -115,10 +115,14 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML WithIndex element</returns>
         public static string WithIndex(Guid fieldID, string fieldValue)
         {
-            return Tag(Resources.WithIndex, null, 
-                Resources.FieldId, fieldID.ToString("D"),
-                Resources.Type, Resources.Text, 
-                Resources.Value, fieldValue);
+            var attributes = new[]
+            {
+                new XAttribute(Resources.Resources.FieldId, fieldID.ToString("D")),
+                new XAttribute(Resources.Resources.Type, Resources.Resources.Text),
+                new XAttribute(Resources.Resources.Value, fieldValue)
+            };
+
+            return Base.Tag(Resources.Resources.WithIndex, attributes).ToStringBySettings();
         }
 
         /// <summary>
@@ -129,7 +133,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML LT element</returns>
         public static string Lt(string leftPart, string rightPart)
         {
-            return Tag(Resources.Lt, leftPart + rightPart);
+            return Tag(Resources.Resources.Lt, leftPart + rightPart);
         }
 
         /// <summary>
@@ -140,7 +144,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML NEQ element</returns>
         public static string Neq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Neq, leftPart + rightPart);
+            return Tag(Resources.Resources.Neq, leftPart + rightPart);
         }
 
         /// <summary>
@@ -151,7 +155,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML OR element</returns>
         public static string Or(string leftPart, string rightPart)
         {
-            return Tag(Resources.Or, leftPart + rightPart);
+            return Tag(Resources.Resources.Or, leftPart + rightPart);
         }
 
         /// <summary>
@@ -161,7 +165,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Where element</returns>
         public static string Where(string s)
         {
-            return Tag(Resources.Where, s);
+            return Tag(Resources.Resources.Where, s);
         }
     }
 }

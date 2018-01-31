@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 // ReSharper disable PossibleMultipleEnumeration
 
@@ -51,6 +52,16 @@ namespace JohnHolliday.Caml.Net
                 yield return source.Take(chunkSize);
                 source = source.Skip(chunkSize);
             }
+        }
+
+        /// <summary>
+        ///     Bringing to a line based on project settings
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public static string ToStringBySettings(this XNode node)
+        {
+            return node.ToString(Constants.SaveOptions);
         }
     }
 }

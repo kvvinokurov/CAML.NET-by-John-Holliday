@@ -29,8 +29,8 @@
 #endregion
 
 using System;
-using System.Linq;
-using JohnHolliday.Caml.Net.Properties;
+using System.Xml.Linq;
+using JetBrains.Annotations;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -45,9 +45,10 @@ namespace JohnHolliday.Caml.Net
         /// <param name="fieldRefElement">a CAML FieldRef element for the target event date</param>
         /// <param name="valueElement">a CAML Value element containing the date to be tested</param>
         /// <returns>a new CAML DateRangesOverlap element</returns>
-        public static string DateRangesOverlap(string fieldRefElement, string valueElement)
+        public static string DateRangesOverlap([NotNull] string fieldRefElement, string valueElement)
         {
-            return Tag(Resources.DateRangesOverlap, string.Concat(fieldRefElement, FieldRef("EndDate"), FieldRef("RecurrenceID"), valueElement));
+            return Tag(Resources.Resources.DateRangesOverlap,
+                string.Concat(fieldRefElement, FieldRef("EndDate"), FieldRef("RecurrenceID"), valueElement));
         }
 
         /// <summary>
@@ -57,7 +58,8 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML List element</returns>
         public static string List(Guid listId)
         {
-            return Tag(Resources.List, Resources.ID, listId.ToString("D"), null);
+            return Base.Tag(Resources.Resources.List,
+                new XAttribute(Resources.Resources.ID, listId.ToString("D"))).ToStringBySettings();
         }
 
 
@@ -68,7 +70,8 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Webs element</returns>
         public static string Webs(QueryScope scope)
         {
-            return Tag(Resources.Webs, Resources.Scope, scope.ToString(), null);
+            return Base.Tag(Resources.Resources.Webs,
+                new XAttribute(Resources.Resources.Scope, scope.ToString())).ToStringBySettings();
             //return Tag(Resources.Webs, null, Resources.Scope, scope.ToString());
         }
 
@@ -79,17 +82,17 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML XML element</returns>
         public static string XML(string s)
         {
-            return Tag(Resources.XML, s);
+            return Tag(Resources.Resources.XML, s);
         }
 
         /// <summary>
-        ///     Defines the query for a view <see cref="CAML.View"/>.
+        ///     Defines the query for a view <see cref="CAML.View" />.
         /// </summary>
         /// <param name="s"></param>
         /// <returns>a new CAML Query element</returns>
         public static string Query(string s)
         {
-            return Tag(Resources.Query, s);
+            return Tag(Resources.Resources.Query, s);
         }
 
         /// <summary>
@@ -99,9 +102,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML View element</returns>
         public static string View(string s)
         {
-            return Tag(Resources.View, s);
+            return Tag(Resources.Resources.View, s);
         }
-
-
     }
 }
