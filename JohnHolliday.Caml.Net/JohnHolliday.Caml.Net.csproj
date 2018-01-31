@@ -154,24 +154,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if "$(ConfigurationName)" == "Release-SP2010" (
-cd "$(ProjectDir)"
-"$(SolutionDir)NuGet\nuget.exe" pack "$(ProjectDir)$(ProjectName).2010.nuspec" -OutputDirectory "$(TargetDir)\"
-"$(SolutionDir)NuGet\nuget.exe" push  -Source "SharePointDevTeam" -ApiKey VSTS "$(TargetDir)$(ProjectName).*.nupkg"
-)
-if "$(ConfigurationName)" == "Release-SP2013" (
-cd "$(ProjectDir)"
-"$(SolutionDir)NuGet\nuget.exe" pack "$(ProjectDir)$(ProjectName).2013.nuspec" -OutputDirectory "$(TargetDir)\"
-"$(SolutionDir)NuGet\nuget.exe" push  -Source "SharePointDevTeam" -ApiKey VSTS "$(TargetDir)$(ProjectName).*.nupkg"
-)</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>if "$(ConfigurationName)" == "Release-SP2010" (
-del "$(TargetDir)*.nupkg"
-)
-if "$(ConfigurationName)" == "Release-SP2013" (
-del "$(TargetDir)*.nupkg"
-)</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
