@@ -104,5 +104,30 @@ namespace JohnHolliday.Caml.Net
         {
             return Tag(Resources.Resources.View, s);
         }
+
+        /// <summary>
+        ///     Sets the row limit for the number of items to display in a view.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="paged">
+        ///     Optional Boolean. TRUE to specify that the list supports displaying more items page by page. If
+        ///     FALSE or unspecified, the row limit is absolute and there is no link to see more items.
+        /// </param>
+        /// <seealso>
+        ///     <cref>https://msdn.microsoft.com/en-us/library/ms428643(v=office.15).aspx</cref>
+        /// </seealso>
+        /// <returns>a new CAML RowLimit element</returns>
+        public static string RowLimit(int number, bool? paged = null)
+        {
+            XAttribute[] attribures = null;
+
+            if (paged.HasValue)
+                attribures = new[]
+                {
+                    new XAttribute(Resources.Resources.Paged, BoolToString(paged.Value))
+                };
+
+            return Base.Tag(Resources.Resources.RowLimit, number.ToString(), attribures).ToStringBySettings();
+        }
     }
 }

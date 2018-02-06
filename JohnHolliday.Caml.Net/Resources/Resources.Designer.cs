@@ -448,6 +448,15 @@ namespace JohnHolliday.Caml.Net.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paged.
+        /// </summary>
+        public static string Paged {
+            get {
+                return ResourceManager.GetString("Paged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ProjectProperty.
         /// </summary>
         public static string ProjectProperty {
@@ -462,6 +471,15 @@ namespace JohnHolliday.Caml.Net.Resources {
         public static string Query {
             get {
                 return ResourceManager.GetString("Query", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RowLimit.
+        /// </summary>
+        public static string RowLimit {
+            get {
+                return ResourceManager.GetString("RowLimit", resourceCulture);
             }
         }
         
