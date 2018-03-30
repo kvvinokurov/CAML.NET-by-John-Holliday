@@ -65,6 +65,13 @@ namespace JohnHolliday.Caml.Net
                     if (string.IsNullOrEmpty(tagValue))
                         return;
 
+                    if (tagValue.IndexOf("<", StringComparison.Ordinal) != -1)
+                    {
+                        var childElement = XElement.Parse(tagValue);
+                        element.Add(childElement);
+                        return;
+                    }
+
                     element.Value = tagValue;
                 }, attributes);
             }

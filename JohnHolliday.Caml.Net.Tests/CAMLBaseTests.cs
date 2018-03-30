@@ -7,53 +7,50 @@ namespace JohnHolliday.Caml.Net.Tests
     [TestFixture]
     public class CAMLBaseTests
     {
-        private const string TagName = "Test";
-        private const string Value = "SomeValue";
-        private const string AttributeName = "testattribute";
-        private const string AttributeValue = "attrval";
+        
 
         [Test]
         public void Tag_AllPropertiesFilled_ReturnCorrectValue()
         {
-            var xmlValue = new XElement(Value);
+            var xmlValue = new XElement(TestData.Value);
             var xmlValueAsString = xmlValue.ToString(SaveOptions.None);
 
-            var attr = new XAttribute(AttributeName, AttributeValue);
+            var attr = new XAttribute(TestData.AttributeName, TestData.AttributeValue);
 
-            var xml = CAML.Base.Tag(TagName, xmlValue, attr);
+            var xml = CAML.Base.Tag(TestData.TagName, xmlValue, attr);
             var str = xml.ToString(SaveOptions.DisableFormatting);
 
-            Assert.AreEqual($@"<{TagName} {attr}>{xmlValueAsString}</{TagName}>", str);
+            Assert.AreEqual($@"<{TestData.TagName} {attr}>{xmlValueAsString}</{TestData.TagName}>", str);
         }
 
         [Test]
         public void Tag_FilledTagNameAndTextValue_ReturnCorrectValue()
         {
-            var xml = CAML.Base.Tag(TagName, Value, null);
+            var xml = CAML.Base.Tag(TestData.TagName, TestData.Value, null);
             var str = xml.ToString(SaveOptions.DisableFormatting);
 
-            Assert.AreEqual($@"<{TagName}>{Value}</{TagName}>", str);
+            Assert.AreEqual($@"<{TestData.TagName}>{TestData.Value}</{TestData.TagName}>", str);
         }
 
         [Test]
         public void Tag_FilledTagNameAndXmlValue_ReturnCorrectValue()
         {
-            var xmlValue = new XElement(Value);
+            var xmlValue = new XElement(TestData.Value);
             var xmlValueAsString = xmlValue.ToString(SaveOptions.None);
 
-            var xml = CAML.Base.Tag(TagName, xmlValue, null);
+            var xml = CAML.Base.Tag(TestData.TagName, xmlValue, null);
             var str = xml.ToString(SaveOptions.DisableFormatting);
 
-            Assert.AreEqual($@"<{TagName}>{xmlValueAsString}</{TagName}>", str);
+            Assert.AreEqual($@"<{TestData.TagName}>{xmlValueAsString}</{TestData.TagName}>", str);
         }
 
         [Test]
         public void Tag_FillOnlyTagName_ReturnCorrectValue()
         {
-            var xml = CAML.Base.Tag(TagName, (XElement[]) null, null);
+            var xml = CAML.Base.Tag(TestData.TagName, (XElement[]) null, null);
             var str = xml.ToString(SaveOptions.DisableFormatting);
 
-            Assert.AreEqual($@"<{TagName} />", str);
+            Assert.AreEqual($@"<{TestData.TagName} />", str);
         }
 
         [Test]

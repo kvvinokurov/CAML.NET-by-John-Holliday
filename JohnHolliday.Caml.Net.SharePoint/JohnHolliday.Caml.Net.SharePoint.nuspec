@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>JohnHolliday.Caml.Net.SharePoint</id>
-    <version>2.2.3</version>
+    <version>2.2.5</version>
     <title>CAML.NET Utilities for SharePoint</title>
     <authors>John Holliday and Associates, Inc.</authors>
     <owners>John Holliday and Associates, Inc.</owners>
@@ -16,7 +16,7 @@
     <copyright>Copyright © John Holliday and Associates, Inc. 2007</copyright>
     <tags>CAML SharePoint JohnHolliday</tags>
     <dependencies>
-      <dependency id="JohnHolliday.Caml.Net" version="2.2.3" />
+      <dependency id="JohnHolliday.Caml.Net" version="2.2.5" />
     </dependencies>
   </metadata>
   <files>
