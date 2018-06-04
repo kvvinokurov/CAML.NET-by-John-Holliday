@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 using JetBrains.Annotations;
 
@@ -58,21 +59,40 @@ namespace JohnHolliday.Caml.Net
                 return Tag(tag, new[] {valueElement}, attributes);
             }
 
-            public static XElement Tag([NotNull] string tag, string tagValue, params XAttribute[] attributes)
+            public static XElement Tag([NotNull] string tag, string valueTags, params XAttribute[] attributes)
+            {
+                return Tag(tag, new[] {valueTags}, attributes);
+            }
+
+            public static XElement Tag([NotNull] string tag, string[] valueTags, params XAttribute[] attributes)
             {
                 return TagWithSetValueAction(tag, element =>
                 {
-                    if (string.IsNullOrEmpty(tagValue))
+                    if (valueTags == null || !valueTags.Any())
                         return;
 
-                    if (tagValue.IndexOf("<", StringComparison.Ordinal) != -1)
+                    foreach (var valueTag in valueTags)
                     {
-                        var childElement = XElement.Parse(tagValue);
-                        element.Add(childElement);
-                        return;
-                    }
+                        if (valueTag.IndexOf("<", StringComparison.Ordinal) != -1)
+                        {
+                            try
+                            {
+                                var childElement = XElement.Parse(valueTag);
+                                element.Add(childElement);
+                            }
+                            catch (XmlException)
+                            {
+                                var valueTagWithRoot = XElement.Parse($"<Root>{valueTag}</Root>");
+                                element.Add(valueTagWithRoot.Elements());
+                            }
 
-                    element.Value = tagValue;
+                            
+                            continue;
+                        }
+
+                        element.Value += valueTag;
+                    }
+                    
                 }, attributes);
             }
 

@@ -15,6 +15,6 @@ namespace JohnHolliday.Caml.Net
         /// <summary>
         ///     xNode ToString SaveOptions settings
         /// </summary>
-        public const SaveOptions SaveOptions = System.Xml.Linq.SaveOptions.None;
+        public const SaveOptions SaveOptions = System.Xml.Linq.SaveOptions.DisableFormatting;
     }
 }

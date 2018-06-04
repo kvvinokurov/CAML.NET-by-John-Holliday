@@ -13,7 +13,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML And element</returns>
         public static string And(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.And, leftPart + rightPart);
+            return Tag(Resources.Resources.And, leftPart, rightPart);
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML BeginsWith element</returns>
         public static string BeginsWith(string fieldRefElement, string valueElement)
         {
-            return Tag(Resources.Resources.BeginsWith, fieldRefElement + valueElement);
+            return Tag(Resources.Resources.BeginsWith, fieldRefElement, valueElement);
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML Contains element</returns>
         public static string Contains(string fieldRefElement, string valueElement)
         {
-            return Tag(Resources.Resources.Contains, fieldRefElement + valueElement);
+            return Tag(Resources.Resources.Contains, fieldRefElement, valueElement);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML EQ element</returns>
         public static string Eq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.Eq, leftPart + rightPart);
+            return Tag(Resources.Resources.Eq, leftPart, rightPart);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML GEQ element</returns>
         public static string Geq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.Geq, leftPart + rightPart);
+            return Tag(Resources.Resources.Geq, leftPart, rightPart);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML GT element</returns>
         public static string Gt(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.Gt, leftPart + rightPart);
+            return Tag(Resources.Resources.Gt, leftPart, rightPart);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML LEQ element</returns>
         public static string Leq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.Leq, leftPart + rightPart);
+            return Tag(Resources.Resources.Leq, leftPart, rightPart);
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML LT element</returns>
         public static string Lt(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.Lt, leftPart + rightPart);
+            return Tag(Resources.Resources.Lt, leftPart, rightPart);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML NEQ element</returns>
         public static string Neq(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.Neq, leftPart + rightPart);
+            return Tag(Resources.Resources.Neq, leftPart, rightPart);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML OR element</returns>
         public static string Or(string leftPart, string rightPart)
         {
-            return Tag(Resources.Resources.Or, leftPart + rightPart);
+            return Tag(Resources.Resources.Or, leftPart, rightPart);
         }
 
         /// <summary>

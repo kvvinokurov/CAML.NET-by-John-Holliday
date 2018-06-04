@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace JohnHolliday.Caml.Net
 {
@@ -32,8 +33,7 @@ namespace JohnHolliday.Caml.Net
         /// <returns>a new CAML ViewFields element</returns>
         public static string ViewFields(params string[] fieldRefs)
         {
-            var fieldRefElements = fieldRefs.Aggregate(string.Empty, (current, field) => current + field);
-            return Tag(Resources.Resources.ViewFields, fieldRefElements);
+            return Base.ViewFields(fieldRefs.Select(XElement.Parse).ToArray()).ToStringBySettings();
         }
     }
 }

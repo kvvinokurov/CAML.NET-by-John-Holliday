@@ -29,6 +29,18 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
+        ///     Builds an XML string without attributes and attribute values.
+        /// </summary>
+        /// <param name="tag">the XML element tag</param>
+        /// <param name="firstChild">the first element (can be null)</param>
+        /// /// <param name="secondChild">the second element (can be null)</param>
+        /// <returns>an XML string resulting from the combined parameters</returns>
+        public static string Tag([NotNull] string tag, string firstChild, string secondChild)
+        {
+            return Base.Tag(tag, new[] {firstChild, secondChild}, null).ToStringBySettings();
+        }
+
+        /// <summary>
         ///     Builds an XML string with or without attributes and attribute values.
         /// </summary>
         /// <param name="tag">the XML element tag</param>
