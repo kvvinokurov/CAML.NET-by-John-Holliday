@@ -106,6 +106,19 @@ namespace JohnHolliday.Caml.Net
         }
 
         /// <summary>
+        ///     Specifies the View
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="scope"></param>
+        /// <returns>a new CAML View element</returns>
+        public static string View(string s, Scope scope)
+        {
+            return scope == Scope.Default 
+                ? Tag(Resources.Resources.View, s) 
+                : Tag(Resources.Resources.View, Resources.Resources.Scope, scope.ToString(), s);
+        }
+
+        /// <summary>
         ///     Sets the row limit for the number of items to display in a view.
         /// </summary>
         /// <param name="number"></param>

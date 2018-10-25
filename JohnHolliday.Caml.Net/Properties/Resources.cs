@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace JohnHolliday.Caml.Net.Properties
 {
-    [Obsolete("Please use new resource class JohnHolliday.Caml.Net.Resources.Resources!")]
+    [Obsolete("Please use new resource class JohnHolliday.Caml.Net.Resources.Resources!", true)]
     [DebuggerNonUserCode]
     public class Resources
     {

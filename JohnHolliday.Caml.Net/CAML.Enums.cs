@@ -145,5 +145,28 @@ namespace JohnHolliday.Caml.Net
             /// </summary>
             EncodeAsUrl
         }
+
+        /// <summary>
+        /// Specifies the recursive scope for a view of a document library
+        /// </summary>
+        public enum Scope
+        {
+            /// <summary>
+            /// Default value (without attribute)
+            /// </summary>
+            Default = 0,
+            /// <summary>
+            /// Show only the files of a specific folder
+            /// </summary>
+            FilesOnly,
+            /// <summary>
+            /// Show all files of all folders
+            /// </summary>
+            Recursive,
+            /// <summary>
+            /// Show all files and all subfolders of all folders
+            /// </summary>
+            RecursiveAll
+        }
     }
 }
